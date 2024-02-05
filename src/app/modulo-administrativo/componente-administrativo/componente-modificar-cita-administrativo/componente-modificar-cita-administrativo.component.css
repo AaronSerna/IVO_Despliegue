@@ -1,0 +1,29 @@
+/* Estilos para la tabla */
+table.dataTable {
+  width: 100%;
+  margin: 0 auto;
+  clear: both;
+  border-collapse: collapse;
+}
+
+/* Estilos para las celdas del encabezado de la tabla */
+table.dataTable thead th {
+  background-color: #f2f2f2;
+}
+
+/* Estilos para las celdas de datos de la tabla */
+table.dataTable tbody td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Estilos para las filas pares de la tabla */
+table.dataTable tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Estilos para las filas impares de la tabla */
+table.dataTable tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}

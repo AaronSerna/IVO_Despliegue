@@ -1,0 +1,46 @@
+<div class="contenedor d-flex flex-column">
+  <mat-card class="horario">
+    <mat-calendar [(selected)]="selected"></mat-calendar>
+  </mat-card>
+
+  <div class="contenedor-notas">
+    <h4>
+      {{selected?.getDate()}}
+      {{selected?.toLocaleDateString(undefined, { month: 'long' })}}
+      {{selected?.getFullYear()}}
+    </h4>
+    <div class="fila d-flex flex-row">
+      <img src="../../../../../assets/images/ImagenesMedico/linea-horario.svg" alt="">
+      <div class="horas d-flex flex-column justify-content-between">
+        <p>08:00</p>
+        <p>09:00</p>
+      </div>
+      <div class="notas">
+        <h1>Carla Perez</h1>
+        <p>Cita normal, para realizar diagnostico. Gripes, covid19,...</p>
+      </div>
+    </div>
+    <div class="fila d-flex flex-row">
+      <img src="../../../../../assets/images/ImagenesMedico/linea-horario.svg" alt="">
+      <div class="horas d-flex flex-column justify-content-between">
+        <p>11:00</p>
+        <p>12:00</p>
+      </div>
+      <div class="notas">
+        <h1>Juan Raul</h1>
+        <p>Cita normal, para realizar diagnostico. Gripe, covid19,...</p>
+      </div>
+    </div>
+    <div class="fila d-flex flex-row">
+      <img src="../../../../../assets/images/ImagenesMedico/linea-horario.svg" alt="">
+      <div class="horas d-flex flex-column justify-content-between">
+        <p>15:00</p>
+        <p>16:00</p>
+      </div>
+      <div class="notas">
+        <h1>Aaron Serna</h1>
+        <p>Cita normal, para realizar diagnostico. Gripe, covid19,...</p>
+      </div>
+    </div>
+  </div>
+</div>

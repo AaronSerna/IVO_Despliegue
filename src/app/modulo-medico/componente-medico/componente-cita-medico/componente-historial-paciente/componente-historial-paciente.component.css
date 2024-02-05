@@ -1,0 +1,42 @@
+.contenedor {
+  width: 530px;
+  height: 530px;
+  border-radius: 24px;
+  background: #FFF;
+  box-shadow: 2px 2px 7px 0px rgba(0, 0, 0, 0.10), 9px 10px 13px 0px rgba(0, 0, 0, 0.09), 20px 22px 18px 0px rgba(0, 0, 0, 0.05), 36px 39px 21px 0px rgba(0, 0, 0, 0.01), 57px 60px 23px 0px rgba(0, 0, 0, 0.00);
+  padding: 0;
+}
+
+h2 {
+    padding: 20px;
+    color: #414141;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+table th,
+table td {
+  width: 574px;
+  height: 70px;
+  color: #6B6B6B;
+  font-size: 16px;
+  text-align: center;
+}
+
+table th {
+  background: linear-gradient(0deg, #444 0%, #444 100%), #FFF !important;
+  color: #FFF;
+  font-weight: bolder;
+}
+
+table tr:hover {
+  cursor: pointer;
+}
+
+table tr:nth-child(odd) {
+  background: linear-gradient(0deg, #E9E9E9 0%, #E9E9E9 100%), #FFF;
+}
+
+table tr:nth-child(even) {
+  background: linear-gradient(0deg, #F8F8F8 0%, #F8F8F8 100%), #FFF;
+}

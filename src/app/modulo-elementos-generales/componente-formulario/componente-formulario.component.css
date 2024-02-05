@@ -1,0 +1,22 @@
+::-webkit-input-placeholder {
+  color: #b8bec9;
+}
+
+.asterisco {
+  color: #f00;
+}
+#checkbox1,
+#checkbox2,
+#checkbox3 {
+  border: 1px solid red;
+  color: blue;
+}
+input[type="checkbox"] {
+  border: 8px solid #e2e7eb;
+  width: 17px;
+  height: 17px;
+}
+
+label {
+  color: #838383;
+}

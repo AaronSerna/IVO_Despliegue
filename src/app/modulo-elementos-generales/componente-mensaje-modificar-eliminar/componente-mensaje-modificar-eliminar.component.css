@@ -1,0 +1,21 @@
+#botonesMensajeAccion button:nth-child(1){
+    background-color: #248E28;
+    width: 60px;
+}
+
+#botonesMensajeAccion button:nth-child(2){
+    background-color: #FF0000;
+    width: 140px;
+
+}
+
+#botonesMensajeAccion button{
+    color: white;
+    border: none;
+    height: 50px;
+    border-radius: 5px;
+}
+
+h3{
+    font-weight: bold;
+}

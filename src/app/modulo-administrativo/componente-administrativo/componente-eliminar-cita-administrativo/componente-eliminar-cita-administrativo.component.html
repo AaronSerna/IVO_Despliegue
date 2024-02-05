@@ -1,0 +1,18 @@
+<app-componente-botones-cabecera 
+
+[tituloCabecera]="'Eliminar Cita - Sergio Gomis Sainz' "
+[botonRetroceder]="true"
+[botonCancelar]="true"
+[botonCrearCita]="false"
+[botonSalirPaciente]="false"
+></app-componente-botones-cabecera>
+
+<app-componente-caja-blanca 
+    [mostrarFormularioPrincipal]="false" 
+    [mostrarPasosFormulario]="false" 
+
+    [mostrarComponenteMensajeAccion]="true"
+    [rutaBotonSi]="'eliminarCita/confirmacionEliminarCita'"
+    [rutaBotonCancelar]="'eliminarCita'"
+
+></app-componente-caja-blanca>

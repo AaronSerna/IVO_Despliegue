@@ -1,0 +1,44 @@
+table {
+  margin-top: -70px;
+  z-index: 1;
+  position: relative;
+  text-align: center;
+}
+
+:host ::ng-deep thead {
+  width: 998px;
+  height: 82px;
+  background-color: #fff;
+}
+
+:host ::ng-deep .even {
+  width: 998px;
+  height: 82px;
+  background-color: #fff;
+}
+
+:host ::ng-deep .odd {
+  width: 998px;
+  height: 82px;
+  background: #f7f9fc;
+  transition: 0.15s ease;
+}
+
+/*.ODD SON LAS PARES*/
+
+:host ::ng-deep .odd:hover {
+  background-color: #3569fd;
+  cursor: pointer;
+  color: white;
+}
+
+/*.EVEN SON LAS IMPARES*/
+:host ::ng-deep .even:hover {
+  background-color: #3569fd;
+  cursor: pointer;
+  color: white;
+}
+
+:host ::ng-deep .table-hover tr:hover {
+  background-color: #d3d3d3;
+}

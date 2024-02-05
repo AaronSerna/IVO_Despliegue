@@ -1,0 +1,10 @@
+<div class="d-flex align-items-center justify-content-center text-center altura">
+  <div class="col-md-3 d-flex flex-column align-items-center justify-content-center">
+    <p class="mb-2">Número de Cita <span style="color: #F00;">*</span></p>
+    <form (ngSubmit)="siguiente()">
+      <input type="text" placeholder="Introduce num. cita" class="mb-2" name="numeroCita" [(ngModel)]="numeroCita"><br>
+      <input type="submit" value="Comprobar" id="btn_comprobar" (click)="siguiente()">
+    </form>
+  </div>
+</div>
+

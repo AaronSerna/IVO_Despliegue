@@ -1,0 +1,71 @@
+:host ::ng-deep .sorting {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 50px;
+}
+
+:host ::ng-deep .even {
+  height: 50px;
+  transition: 0.15s ease;
+}
+
+:host ::ng-deep .odd {
+  height: 50px;
+  transition: 0.15s ease;
+}
+
+:host ::ng-deep .even:hover {
+  background-color: #3569fd;
+  cursor: pointer;
+  color: white;
+}
+:host ::ng-deep .odd:hover {
+  background-color: #3569fd;
+  cursor: pointer;
+  color: white;
+}
+
+:host ::ng-deep li {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+:host ::ng-deep .dataTables_scrollHeadInner {
+  background-color: #b1b1b1;
+  color: white;
+}
+
+:host ::ng-deep .even:hover {
+  background-color: #3569fd;
+  cursor: pointer;
+  color: white;
+}
+:host ::ng-deep .odd:hover {
+  background-color: #3569fd;
+  cursor: pointer;
+  color: white;
+}
+:host ::ng-deep .even:hover a:nth-child(1) img {
+  cursor: pointer;
+  content: url("../../../../../assets/images/ImagenesMedico/iconoAbrirCitaBlanco.svg");
+}
+
+:host ::ng-deep .even:hover a:nth-child(2) img {
+  cursor: pointer;
+  content: url("../../../../../assets/images/ImagenesGenerales/papeleraBlanco.svg");
+}
+
+:host ::ng-deep .odd:hover a:nth-child(1) img {
+  cursor: pointer;
+  content: url("../../../../../assets/images/ImagenesMedico/iconoAbrirCitaBlanco.svg");
+}
+
+:host ::ng-deep .odd:hover a:nth-child(2) img {
+  cursor: pointer;
+  content: url("../../../../../assets/images/ImagenesGenerales/papeleraBlanco.svg");
+}
+
+:host ::ng-deep .table-hover tr:hover {
+  background-color: #d3d3d3;
+}

@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-12 d-flex flex-column">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>¿Deseas <span>{{accionRealizar}}</span> la cita de <span>{{nombrePaciente}}</span>?</h3>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-12">
+                <p>Estás a punto de <span>{{accionRealizar}}</span> una cita</p>
+            </div>
+        </div>
+        <div class="row">
+            <div id="botonesMensajeAccion" class="col-md-12 d-flex justify-content-center">
+                <button routerLink="{{rutaBotonSi}}">SI</button>
+                <button routerLink="{{rutaBotonCancelar}}" class="ms-2">CANCELAR</button>
+            </div>
+        </div>
+    </div>
+</div>

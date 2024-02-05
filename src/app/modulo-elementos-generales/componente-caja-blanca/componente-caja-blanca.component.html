@@ -1,0 +1,213 @@
+<div class="row mt-1">
+  <div class="col-md-12">
+    <!--DIV PARA MOSTRAR LOS PASOS DEL FORMULARIO-->
+    <div *ngIf="mostrarPasosFormulario">
+      <app-componente-pasos-formulario
+        [mostrarUltimaPregunta]="mostrarUltimaPregunta"
+        [texto1]="texto1"
+        [texto2]="texto2"
+        [texto3]="texto3"
+        [texto4]="texto4"
+        [texto5]="texto5"
+        [estilosPaso1]="estilosPaso1"
+        [estilosCuadradoPaso1]="estilosCuadradoPaso1"
+        [estilosPaso2]="estilosPaso2"
+        [estilosCuadradoPaso2]="estilosCuadradoPaso2"
+        [estilosPaso3]="estilosPaso3"
+        [estilosCuadradoPaso3]="estilosCuadradoPaso3"
+        [estilosPaso4]="estilosPaso4"
+        [estilosCuadradoPaso4]="estilosCuadradoPaso4"
+        [estilosPaso5]="estilosPaso5"
+        [estilosCuadradoPaso5]="estilosCuadradoPaso5"
+      ></app-componente-pasos-formulario>
+    </div>
+
+    <div
+      id="ajustarTituloYparrafoYformulario"
+      class="w-100 d-flex justify-content-center align-items-center flex-column"
+    >
+      <!-- DIV PARA MOSTRAR EL TITULO Y DESCRIPCION DE CADA FORMULARIO -->
+      <div
+        class="d-flex align-items-center justify-content-center"
+        style="height: 100px"
+      >
+        <div>
+          <h4 style="color: #3b82f6" class="mb-3">
+            {{ tituloSeccionFormulario }}
+          </h4>
+          <p style="color: #9e9e9e">{{ descripcionTituloFormulario }}</p>
+        </div>
+      </div>
+
+      <!--DIV PARA MOSTRAR EL RESUMEN DE LOS DATOS-->
+      <div *ngIf="mostrarResumenDatosCrearCita">
+        <app-componente-resumen-datos-crear-cita-paso-tres
+          [mostrarResumenDatosCrearCita]="mostrarResumenDatosCrearCita"
+        ></app-componente-resumen-datos-crear-cita-paso-tres>
+      </div>
+
+      <div *ngIf="mostrarResumenDatosPedirCitaPaciente" class="">
+        <app-componente-resumen-datos-paciente
+          [mostrarResumenDatosPedirCitaPaciente]="
+            mostrarResumenDatosPedirCitaPaciente
+          "
+          
+        ></app-componente-resumen-datos-paciente>
+      </div>
+
+      <!--DIV PARA MOSTRAR EL FORMULARIO (LUEGO SE ESPECIFICARA CUAL DE LOS DOS SE DESEA MOSTRAR, SI EL DE CREACION DE UN PACIENTE O EL FORMULARIO NORMAL EDITABLE)-->
+      <div *ngIf="mostrarFormularioPrincipal">
+        <app-componente-formulario
+          [labelNuevaFecha]="labelNuevaFecha"
+          [labelNuevaHora]="labelNuevaHora"
+          [labelNuevoMedico]="labelNuevoMedico"
+          [mostrarFormCrearPaciente]="mostrarFormCrearPaciente"
+          [mostrarFormPrincipal]="mostrarFormPrincipal"
+          [mostrarNuevoMedico]="mostrarNuevoMedico"
+          [mostrarNuevaFecha]="mostrarNuevaFecha"
+          [mostrarNuevaHora]="mostrarNuevaHora"
+          [rutaProximoPaso]="rutaProximoPaso"
+          [rutaAnteriorPaso]="rutaAnteriorPaso"
+          [mostrarBotonRetroceder]="mostrarBotonRetroceder"
+          [mostrarInputCuatro]="mostrarInputCuatro"
+          [estilosFormulario]="estilosFormulario"
+          [estiloBotonContinuar]="estiloBotonContinuar"
+          [estiloBotonRetroceder]="estiloBotonRetroceder"
+          [mostrarCheckboxesPedirCita]="mostrarCheckboxesPedirCita"
+          [mostrarTercerCheckboxPedirCita]="mostrarTercerCheckboxPedirCita"
+          [mostrarTercerLabelPedirCita]="mostrarTercerLabelPedirCita"
+          [textoLabel1]="textoLabel1"
+          [textoLabel2]="textoLabel2"
+          [textoLabel3]="textoLabel3"
+          [valueCheckbox1]="valueCheckbox1"
+          [valueCheckbox2]="valueCheckbox2"
+          [valueCheckbox3]="valueCheckbox3"
+          [mostrarEleccionMedico]="mostrarEleccionMedico"
+          [mostrarInputsPedirCita]="mostrarInputsPedirCita"
+        ></app-componente-formulario>
+      </div>
+
+      <div *ngIf="mostrarComponenteMensajeAccion">
+        <app-componente-mensaje-modificar-eliminar
+          [rutaBotonSi]="rutaBotonSi"
+          [rutaBotonCancelar]="rutaBotonCancelar"
+        ></app-componente-mensaje-modificar-eliminar>
+      </div>
+
+      <div *ngIf="mostrarConfirmacionModificarCita">
+        <app-componente-confirmacion
+          [textoConfirmacion]="textoConfirmacion"
+          [textoBoton]="textoBoton"
+          [ruta]="ruta"
+        ></app-componente-confirmacion>
+      </div>
+
+      <!-- FORMULARIO CREAR CITA PASO 1 -->
+        <div *ngIf="crearCitaPaso1">
+          <div [ngStyle]="estilosFormulario">
+            <div class="container mt-5">
+              <div class="row justify-content-center">
+                <div class="col-md-6">
+                  <form (ngSubmit)="enviarFormulario()" #miFormulario="ngForm" class="was-validated">
+                    <div class="form-group">
+                      <label for="dni" class="form-label">DNI del paciente:<span class="ms-1 asterisco">*</span></label>
+                      <input type="text" class="form-control" name="dni" [(ngModel)]="crearCitaPaso1Formulario.dni" required pattern="[0-9]{8}[a-zA-Z]" #dniInput="ngModel"/>
+                      <div class="valid-feedback">Dni valido</div>
+                      <div class="invalid-feedback">Porfavor introduce un DNI valido.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" [disabled]="miFormulario.invalid">Continuar</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- FIN FORMULARIO CREAR CITA PASO 1 -->
+
+      <!-- FORMULARIO CREAR CITA PASO 2 -->
+      <div *ngIf="crearCitaPaso2">
+        <div [ngStyle]="estilosFormulario">
+          <div class="container mt-5">
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <form (ngSubmit)="enviarFormularioPaso2()" #miFormulario="ngForm">
+                  <!-- Especialidad -->
+                  <div class="form-group">
+                    <label for="especialidad">Especialidad<span class="ms-1 asterisco">*</span></label>
+                    <select
+                      class="form-control"
+                      id="especialidad"
+                      name="especialidad"
+                      [(ngModel)]="crearCitaPaso2Formulario.especialidad"
+                      required
+                      class="form-select" 
+                    >
+                      <option value="" disabled selected>Selecciona una opción</option>
+                      <option value="opcion1">Radiologia</option>
+                      <option value="opcion2">Medicina General</option>
+                    </select>
+                  </div>
+
+                  <!-- Fecha -->
+                  <div class="form-group">
+                    <label for="fecha">Fecha<span class="ms-1 asterisco">*</span></label>
+                    <select
+                      id="fecha"
+                      name="fecha"
+                      [(ngModel)]="crearCitaPaso2Formulario.fecha"
+                      required
+                      class="form-select"
+                    >
+                      <option value="" disabled selected>Selecciona una opción</option>
+                      <option value="opcion1">19-02-2024</option>
+                      <option value="opcion2">20-02-2024</option>
+                      <option value="opcion2">21-02-2024</option>
+                      <option value="opcion2">22-02-2024</option>
+                      <option value="opcion2">23-02-2024</option>
+                    </select>
+                  </div>
+
+                  <!-- Hora -->
+                  <div class="form-group">
+                    <label for="hora">Hora<span class="ms-1 asterisco">*</span></label>
+                    <select
+                    class="form-select"
+                    id="hora"
+                      name="hora"
+                      [(ngModel)]="crearCitaPaso2Formulario.hora"
+                      required
+                    >
+                      <option value="" disabled selected>Selecciona una opción</option>
+                      <option value="opcion1">Opción 1</option>
+                      <option value="opcion2">Opción 2</option>
+                    </select>
+                  </div>
+
+                  <!-- Médico -->
+                  <div class="form-group">
+                    <label for="medico">Médico<span class="ms-1 asterisco">*</span></label>
+                    <select
+                    class="form-select"
+                    id="medico"
+                      name="medico"
+                      [(ngModel)]="crearCitaPaso2Formulario.medico"
+                      required
+                    >
+                      <option value="" disabled selected>Selecciona una opción</option>
+                      <option value="opcion1">Opción 1</option>
+                      <option value="opcion2">Opción 2</option>
+                    </select>
+                  </div>
+
+                  <input type="submit" value="Continuar">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FIN FORMULARIO CREAR CITA PASO 2 -->
+
+    </div>
+  </div>
+</div>
