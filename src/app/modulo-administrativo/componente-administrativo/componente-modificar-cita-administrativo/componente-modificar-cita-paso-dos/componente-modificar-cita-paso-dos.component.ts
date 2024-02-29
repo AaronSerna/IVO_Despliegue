@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CitasService } from '../../../../services/servicio-citas/citas.service';
+import { tap } from 'rxjs';
+
 @Component({
   selector: 'app-componente-modificar-cita-paso-dos',
   templateUrl: './componente-modificar-cita-paso-dos.component.html',
@@ -18,7 +20,8 @@ export class ComponenteModificarCitaPasoDosComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private citasService: CitasService
+    private citasService: CitasService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -30,7 +33,8 @@ export class ComponenteModificarCitaPasoDosComponent {
       this.idRadiologo
     );
 
-    this.route.queryParams.subscribe((params) => { // Almacenamos los datos recibidos de la URL.
+    this.route.queryParams.subscribe((params) => {
+      // Almacenamos los datos recibidos de la URL.
       this.idCita = decodeURIComponent(params['idCita']);
       this.nombrePaciente = decodeURIComponent(params['nombrePaciente']);
       this.fecha = decodeURIComponent(params['fecha']);
@@ -40,7 +44,6 @@ export class ComponenteModificarCitaPasoDosComponent {
   }
 
   actualizarCita() {
-
     const datosActualizados = {
       fecha: this.fecha,
       hora: this.hora,
@@ -48,6 +51,13 @@ export class ComponenteModificarCitaPasoDosComponent {
     };
     this.citasService
       .updateCita(this.idCita, datosActualizados)
+      .pipe(
+        tap((data: any) => {
+          this.router.navigate([
+            'administrativo/modificarCita/confirmacionModificarCita',
+          ]); // Navegar a la página de confirmación
+        })
+      )
       .subscribe((response) => {
         console.log('Cita actualizada:', response);
       });
