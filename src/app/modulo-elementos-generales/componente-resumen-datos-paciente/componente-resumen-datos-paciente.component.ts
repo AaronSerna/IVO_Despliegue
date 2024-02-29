@@ -3,6 +3,7 @@ import { UsuariosService } from '../../services/servicio-usuarios/usuarios.servi
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs';
+import { AuthService } from '../../services/servicio-auth/auth.service';
 
 @Component({
   selector: 'app-componente-resumen-datos-paciente',
@@ -10,6 +11,8 @@ import { tap } from 'rxjs';
   styleUrls: ['./componente-resumen-datos-paciente.component.css'],
 })
 export class ComponenteResumenDatosPacienteComponent {
+  idAdministrativo: number | null = null; // Al almacenar un dato de una suscripción en una variable, Angular dice que el dato recibido podría ser null.
+
   nombre: string = '';
   primer_apellido: string = '';
   segundo_apellido: string = '';
@@ -31,7 +34,8 @@ export class ComponenteResumenDatosPacienteComponent {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private usuariosService: UsuariosService
+    private usuariosService: UsuariosService,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
@@ -53,6 +57,12 @@ export class ComponenteResumenDatosPacienteComponent {
       this.direccion = decodeURIComponent(params['direccion']);
       this.piso = params['piso'];
       this.escalera = params['escalera'];
+
+      this.authService.obtenerUsuarioId().subscribe((id) => {
+        if (id !== null) {
+          this.idAdministrativo = id; // Si el dato recibido no es null, guardamos el id del paciente.
+        }
+      });
     });
   }
 
@@ -84,6 +94,7 @@ export class ComponenteResumenDatosPacienteComponent {
         piso: this.piso,
         puerta: this.puerta,
         escalera: this.escalera,
+        idAdministrativo: this.idAdministrativo,
       })
       .pipe(
         tap(() => {
