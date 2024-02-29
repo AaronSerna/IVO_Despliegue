@@ -1,51 +1,6 @@
 <div class="contenedor container-fluid d-flex flex-column">
   <h2>Historial del paciente</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Fecha</th>
-        <th>Médico</th>
-        <th>Tipo cita</th>
-        <th>Hora</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr (click)="togglePopup()">
-        <td>22/03/2024</td>
-        <td>Dra. Marina Heeraiz</td>
-        <td>Medicina Familiar</td>
-        <td>10:45</td>
-        <td><a href="#"><img src="../../../../../assets/images/ImagenesMedico/abrirCitaMedico.svg" alt=""></a></td>
-      </tr>
-      <tr (click)="togglePopup()">
-        <td>22/03/2024</td>
-        <td>Dra. Marina Heeraiz</td>
-        <td>Medicina Familiar</td>
-        <td>10:45</td>
-        <td><a href="#"><img src="../../../../../assets/images/ImagenesMedico/abrirCitaMedico.svg" alt=""></a></td>
-      </tr>
-      <tr (click)="togglePopup()">
-        <td>22/03/2024</td>
-        <td>Dra. Marina Heeraiz</td>
-        <td>Medicina Familiar</td>
-        <td>10:45</td>
-        <td><a href="#"><img src="../../../../../assets/images/ImagenesMedico/abrirCitaMedico.svg" alt=""></a></td>
-      </tr>
-      <tr (click)="togglePopup()">
-        <td>22/03/2024</td>
-        <td>Dra. Marina Heeraiz</td>
-        <td>Medicina Familiar</td>
-        <td>10:45</td>
-        <td><a href="#"><img src="../../../../../assets/images/ImagenesMedico/abrirCitaMedico.svg" alt=""></a></td>
-      </tr>
-      <tr (click)="togglePopup()">
-        <td>22/03/2024</td>
-        <td>Dra. Marina Heeraiz</td>
-        <td>Medicina Familiar</td>
-        <td>10:45</td>
-        <td><a href="#"><img src="../../../../../assets/images/ImagenesMedico/abrirCitaMedico.svg" alt=""></a></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="tabla-historial">
+    <table datatable [dtOptions]="dtOptions"></table>
+</div>
 </div>

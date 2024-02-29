@@ -16,13 +16,14 @@ import { ComponenteCajaInformacionPacienteComponent } from './componente-medico/
 import { ComponentePopupConfirmarSalirComponent } from './componente-medico/componente-cita-medico/componente-popup-confirmar-salir/componente-popup-confirmar-salir.component';
 import { ComponenteCabeceraInicioMedicoComponent } from './componente-medico/componente-inicio-medico/componente-cabecera-inicio-medico/componente-cabecera-inicio-medico.component';
 import { ComponenteHorarioSidebarMedicoComponent } from './componente-medico/componente-inicio-medico/componente-horario-sidebar-medico/componente-horario-sidebar-medico.component';
-import { ComponenteBotonesDiagnosticoMedicoComponent } from './componente-medico/componente-cita-medico/componente-botones-diagnostico-medico/componente-botones-diagnostico-medico.component';
 import { ComponenteTablaPacientesMedicoComponent } from './componente-medico/componente-inicio-medico/componente-tabla-pacientes-medico/componente-tabla-pacientes-medico.component';
-import { StylingService } from './componente-medico/styling.service';
-import { SharedService } from './componente-medico/shared.service';
+import { StylingService } from './componente-medico/services/styling.service';
+import { SharedService } from './componente-medico/services/shared.service';
+import { FormsModule } from '@angular/forms'; 
 
 // IMPORTACIÓN MÓDULO ELEMENTOS GENERALES:
 import {ModuloElementosGeneralesModule} from '../modulo-elementos-generales/modulo-elementos-generales.module';
+import { ComponentePopupConfirmarCancelarComponent } from './componente-medico/componente-inicio-medico/componente-popup-confirmar-cancelar/componente-popup-confirmar-cancelar.component';
 
 
 @NgModule({
@@ -35,8 +36,8 @@ import {ModuloElementosGeneralesModule} from '../modulo-elementos-generales/modu
     ComponenteCajaInformacionPacienteComponent,
     ComponentePopupConfirmarSalirComponent,
     ComponenteCabeceraInicioMedicoComponent,
-    ComponenteBotonesDiagnosticoMedicoComponent,
     ComponenteTablaPacientesMedicoComponent,
+    ComponentePopupConfirmarCancelarComponent,
   ],
   imports: [
     CommonModule,
@@ -45,7 +46,8 @@ import {ModuloElementosGeneralesModule} from '../modulo-elementos-generales/modu
     MatDatepickerModule,
     MatNativeDateModule,
     ComponenteHorarioSidebarMedicoComponent,
-    DataTablesModule
+    DataTablesModule,
+    FormsModule
     ],
     providers: [StylingService, SharedService]
 })

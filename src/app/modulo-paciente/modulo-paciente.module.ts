@@ -24,6 +24,8 @@ import { ComponentePedirCitaPacienteFinalComponent } from './componente-paciente
 
 // IMPORTACIÓN MÓDULO ELEMENTOS GENERALES:
 import { ModuloElementosGeneralesModule } from '../modulo-elementos-generales/modulo-elementos-generales.module';
+import { ComponenteCancelarCitaPacienteComponent } from './componente-paciente/componente-mis-citas-paciente/componente-cancelar-cita-paciente/componente-cancelar-cita-paciente.component';
+import { ComponenteCancelarCitaPacienteFinalComponent } from './componente-paciente/componente-mis-citas-paciente/componente-cancelar-cita-paciente-final/componente-cancelar-cita-paciente-final.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { ModuloElementosGeneralesModule } from '../modulo-elementos-generales/mo
     ComponentePedirCitaPasoCuatroComponent,
     ComponentePedirCitaPasoCincoComponent,
     ComponentePedirCitaPacienteFinalComponent,
+    ComponenteCancelarCitaPacienteComponent,
+    ComponenteCancelarCitaPacienteFinalComponent,
   ],
   imports: [
     CommonModule,

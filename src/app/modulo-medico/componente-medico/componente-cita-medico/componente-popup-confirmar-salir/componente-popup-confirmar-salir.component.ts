@@ -6,9 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./componente-popup-confirmar-salir.component.css']
 })
 export class ComponentePopupConfirmarSalirComponent {
-  ocultarPopUp: boolean = false;
+  ocultarPopUp: boolean = true;
 
   togglePopup() : void {
     this.ocultarPopUp = !this.ocultarPopUp;
+
+    // TODO: Hacer que salga el pop-up cuando quiera salir.
   }
 }

@@ -1,3 +1,4 @@
+<app-componente-popup-confirmar-cancelar *ngIf="mostrarPopUp" [num_cita_recibido]="num_cita_enviar" (cerrarPopup)="cerrarPopup($event)"></app-componente-popup-confirmar-cancelar>
 <div class="tabla-pacientes">
-    <table datatable class="" [dtOptions]="dtOptions" style="width: 100% !important;"></table>
+    <table datatable [dtOptions]="dtOptions"></table>
 </div>

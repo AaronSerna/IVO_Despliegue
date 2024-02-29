@@ -6,6 +6,7 @@
   padding: 20px;
   border-radius: 24px 0px 0px 0px;
   width: 108%;
+  min-height: 830px;
 }
 
 /**
@@ -35,8 +36,8 @@
   font-weight: bold;
 }
 
-:host ::ng-deep .mat-calendar-body tr:nth-child(1) {
-  display: none;
+:host ::ng-deep .mat-calendar-body tr:nth-child(1) .mat-calendar-body-label{
+  color: white;
 }
 
 :host ::ng-deep .mat-calendar-body-cell-container {
@@ -46,7 +47,7 @@
 }
 
 :host ::ng-deep .mat-calendar-body-selected {
-  background: #028ac7;
+  background: #3569FD;
   color: #ffff;
 }
 
@@ -61,14 +62,11 @@
   box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.1),
     2px 6px 6px 0px rgba(0, 0, 0, 0.09), 5px 12px 8px 0px rgba(0, 0, 0, 0.05),
     9px 22px 10px 0px rgba(0, 0, 0, 0.01), 14px 35px 10px 0px rgba(0, 0, 0, 0);
-  resize: none;
   width: 300px;
-  height: 150px;
 
   display: flex;
   flex-direction: column;
   font-size: 18px;
-  padding: 10px;
 }
 
 .notas h1 {
@@ -94,3 +92,10 @@
 .fila textarea {
   margin: 10px;
 }
+
+.contenedorNotasGeneral {
+  overflow-y: auto; /* Agrega un scroll vertical cuando sea necesario */
+  max-height: 350px; /* Establece una altura máxima para que aparezca el scroll */
+}
+
+

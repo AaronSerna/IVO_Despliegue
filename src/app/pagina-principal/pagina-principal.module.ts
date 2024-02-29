@@ -19,4 +19,9 @@ import { MenuUsuariosComponent } from './menu-usuarios/menu-usuarios.component';
   ]
 })
 
-export class PaginaPrincipalModule { }
+export class PaginaPrincipalModule {
+  
+  // Este componente es la barra lateral con el icono del IVO y el icono 'Salir', ya que son los únicos elementos que permanecerán indendientemente del rol que inicie sesión.
+
+  
+}

@@ -1,22 +1,22 @@
 <!-- COMPONENTE USADO EN 'CREAR CITA' DE ADMINISTRATIVO -->
 
 <div *ngIf="mostrarResumenDatosCrearCita">
-  <div class="container mt-5">
-    <h2>Resumen de los datos</h2>
 
-    <div *ngFor="let cita of citasPaso1">
-      <h5><strong>Dni:</strong> <span class="info">{{ cita.dni }}</span></h5>
+  <div class="container ">
+    <h2 class="fw-bold">Resumen de los datos</h2>
+    <div >
+      <h5><strong>Dni:</strong> <span class="info">{{ dni }}</span></h5>
     </div>
     
-    <div *ngFor="let cita of citasPaso2">
-      <h5><strong>Especialidad:</strong> <span class="info">{{ cita.especialidad }}</span></h5>
-      <h5><strong>Fecha:</strong> <span class="info">{{ cita.fecha }}</span></h5>
-      <h5><strong>Hora:</strong> <span class="info">{{ cita.hora }}</span></h5>
-      <h5><strong>Médico:</strong> <span class="info">{{ cita.medico }}</span></h5>
+    <div>
+      <h5><strong>Fecha:</strong> <span class="info">{{ fecha }}</span></h5>
+      <h5><strong>Hora:</strong> <span class="info">{{ hora }}</span></h5>
+      <h5><strong>Radiologo:</strong> <span class="info">{{ nombreRadiologo }}</span></h5>
     </div>    
 
-    <form action="" #myFormu="ngForm" (ngSubmit)="continuarAconfirmacion()">
-      <input type="submit" value="Continuar">
+    <form action="" #myFormu="ngForm" class="mt-4">
+      
+      <input type="submit" value="Continuar" (click)="continuarAconfirmacion()"> 
     </form>
   </div>
 </div>

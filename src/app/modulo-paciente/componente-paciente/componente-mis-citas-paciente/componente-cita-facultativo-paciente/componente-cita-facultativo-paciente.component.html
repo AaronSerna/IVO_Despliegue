@@ -6,17 +6,16 @@
     [botonCrearCita]="false"
     [botonSalirPaciente]="true"
     [rutaRetroceder]="'/paciente/misCitas'"
-    [rutaSalir]="'/paciente/'"
   ></app-componente-botones-cabecera>
 </div>
 
 <div class="row mt-4 mx-3">
   <div class="col-lg-3 col-md-4" >
     <app-componente-detalles-cita-paciente
-      [nombreDoctor]="'Dra. Natividad San Juan'"
-      [tipoDoctor]="'Médico'"
-      [fechaCita]="'24/05/2024'"
-      [horaCita]="'09:30'"
+    [nombreDoctor]="nombreDoctor"
+      [tipoCita]="tipoCita"
+      [fechaCita]="fechaCita"
+      [horaCita]="horaCita"
     ></app-componente-detalles-cita-paciente>
   </div>
 

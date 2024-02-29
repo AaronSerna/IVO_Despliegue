@@ -19,3 +19,7 @@ export class ComponenteErrorComponent {
     }
   }
 }
+
+/*  
+Este componente finalmente no se está usando. Lo dejamos creado por si algún miembro del equipo, en sus proyectos, necesita este componente.
+*/

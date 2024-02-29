@@ -11,4 +11,7 @@ export class ComponenteCrearPacienteAdministrativoComponent {
   @Input() mostrarFormPrincipal: boolean = true;
   @Input() mostrarFormCrearPaciente: boolean = true;
 
+  @Input() mostrarFormularioCrearPacientePaso1: boolean = false;
+
+
 }

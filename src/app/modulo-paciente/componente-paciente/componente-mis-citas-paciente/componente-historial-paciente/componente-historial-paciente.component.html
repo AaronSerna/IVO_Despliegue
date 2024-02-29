@@ -1,11 +1,7 @@
 <div class="historialMedico">
 <div class="d-flex justify-content-between mb-4">
-    <p class="fw-bold fs-5 mx-4 mt-3">Historial de citas</p>
-    <select id="selectTipoMedico" class="h-25 fw-bold mx-4 mt-3 fs-6" [(ngModel)]="tipoMedico" (change)="onTipoMedicoChange()">
-        <option value="authors">Facultativo</option>
-        <option value="radiologo">Radiólogo</option>
-    </select>
+    <p class="fw-bold fs-5 mx-4 mt-3">Historial de citas</p> 
 </div>
 
-<table id="historialPaciente" datatable class="row-border hover" [dtOptions]="dtOptions"></table>
+<table id="historialPaciente" datatable class="row-border hover" [dtOptions]="dtOptions" ></table>
 </div>

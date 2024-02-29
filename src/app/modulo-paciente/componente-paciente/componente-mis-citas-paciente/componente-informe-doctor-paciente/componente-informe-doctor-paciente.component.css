@@ -36,13 +36,12 @@
   border: 3px solid #3376e2;
 }
 
-.verPDF {
-  padding: 10px;
-}
+
 
 .descargarPDF {
   border-radius: 6px;
   border: 1px #c6cbd6 solid;
+  padding: 10px;
 }
 
 @media (max-width: 600px) {
@@ -50,16 +49,5 @@
   .informe {
     margin-left: 0px;
     margin-top: 20px;
-  }
-}
-/* Resolución medianas */
-@media (max-width: 991px) {
-  button {
-    padding: 0px;
-    margin-right: 7px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    display: flex;
   }
 }

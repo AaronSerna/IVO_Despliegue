@@ -5,6 +5,10 @@ import { ReplaySubject } from 'rxjs';
   providedIn: 'root',
 })
 export class StylingService {
+  /**
+    Este servicio se usa para poder cambiar los estilos de un componente,
+    cuando otra componente active un evento, por ejemplo.
+   */
   sharedStyleSource = new ReplaySubject(1);
   public sharedStyle$ = this.sharedStyleSource.asObservable();
   constructor() {}

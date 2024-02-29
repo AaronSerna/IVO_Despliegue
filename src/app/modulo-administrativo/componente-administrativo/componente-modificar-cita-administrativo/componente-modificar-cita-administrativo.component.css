@@ -27,3 +27,36 @@ table.dataTable tbody tr:nth-child(even) {
 table.dataTable tbody tr:nth-child(odd) {
   background-color: #ffffff;
 }
+
+.eliminacion {
+  background-color: white;
+  height: 78vh;
+  border-radius: 6px;
+  box-shadow: -0.088px 2.398px 8.288px 0px rgba(0, 0, 0, 0.04),
+    -0.439px 11.992px 51px 0px rgba(0, 0, 0, 0.07);
+}
+
+input[type="submit"] {
+  /*  background-color: #3b82f6;*/
+  height: 50px;
+  width: 160px;
+  font-size: 18px;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  margin-left: 50px;
+}
+
+input[type="text"] {
+  border: 1px solid #dadada;
+  border-radius: 6px;
+  height: 40px;
+}
+
+.asterisco {
+  color: #f00;
+}
+
+.form-group {
+  margin-top: 10px;
+}

@@ -1,8 +1,9 @@
-<div id="custom" class="card border-0">
+
+<div>
 
   <div class="card-body">
 
-    <form action="">
+    <form class="was-validated" action="" #formulario="ngForm" >
 
       <!--FORMULARIO PRINCIPAL-->
 
@@ -11,7 +12,8 @@
 
           <div *ngIf="mostrarNuevoMedico">
             <div class="mb-3">
-              <label for="nuevoMedico" class="form-label">{{labelNuevoMedico}}<span class="ms-1 asterisco">*</span></label>
+              <label for="nuevoMedico" class="form-label">{{labelNuevoMedico}}<span
+                  class="ms-1 asterisco">*</span></label>
               <select id="nuevoMedico" name="nuevoMedico" class="form-select" required>
                 <option value="">Selecciona una opción</option>
                 <option value="medico1">Medico Normal</option>
@@ -78,159 +80,49 @@
 
       <!-- CHECKBOXES (PASO 1 Y PASO 4)-->
       <div *ngIf="mostrarCheckboxesPedirCita">
-        <div class="checkboxPaciente fw-bold mb-5 justify-content-center align-center text-center" style="margin: -15px;">
-          <input type="checkbox" name="checkboxGroup" id="checkbox1" value="{{valueCheckbox1}}"
-            (change)="seleccionarUnCheckbox($event)">
-          <label for="checkbox1">&nbsp;{{textoLabel1}}</label>
+        <div class="checkboxPaciente fw-bold mb-5 justify-content-center align-center text-center"
+          style="font-size: 1.1rem;">
+          <div class="labelPaciente" [ngStyle]="estiloCheckboxesPaciente">
+            <input type="checkbox" name="checkboxGroup" id="checkbox1" value="{{valueCheckbox1}}"
+              (change)="seleccionarUnCheckbox($event)">
+            <label for="checkbox1">&nbsp;{{textoLabel1}}</label>
+          </div>
           <br>
-          <input type="checkbox" name="checkboxGroup" id="checkbox2" value="{{valueCheckbox2}}"
-            (change)="seleccionarUnCheckbox($event)">
-          <label for="checkbox2">&nbsp;{{textoLabel2}}</label>
+          <div class="labelPaciente" [ngStyle]="estiloCheckboxesPaciente">
+            <input type="checkbox" name="checkboxGroup" id="checkbox2" value="{{valueCheckbox2}}"
+              (change)="seleccionarUnCheckbox($event)">
+            <label for="checkbox2">&nbsp;{{textoLabel2}}</label>
+          </div>
           <br>
-          <input *ngIf="mostrarTercerCheckboxPedirCita" type="checkbox" name="checkboxGroup" id="checkbox3"
-            value="{{valueCheckbox3}}" (change)="seleccionarUnCheckbox($event)">
-          <label *ngIf="mostrarTercerLabelPedirCita" for="checkbox3">&nbsp;{{textoLabel3}}</label>
+          <div class="labelPaciente" [ngStyle]="estiloCheckboxesPaciente">
+            <input *ngIf="mostrarTercerCheckboxPedirCita" type="checkbox" name="checkboxGroup" id="checkbox3"
+              value="{{valueCheckbox3}}" (change)="seleccionarUnCheckbox($event)">
+            <label *ngIf="mostrarTercerLabelPedirCita" for="checkbox3">&nbsp;{{textoLabel3}}</label>
+          </div>
         </div>
       </div>
 
       <!-- INPUTS (PASO 3)-->
       <div *ngIf="mostrarInputsPedirCita">
 
-      <div class="mb-3 w-75 d-flex mx-5"  style="margin: -15px;">
-        <label for="nombre" class="form-label fw-bold text-dark">Fecha<span class="ms-1 asterisco">*</span></label>
-        <input type="date" class="form-control mx-2" id="fechaPedirCita" name="fechaPedirCita" value="">
-      </div>
+        <div class="mb-3 w-75 d-flex mx-5" style="margin: -15px;">
+          <label for="nombre" class="form-label fw-bold text-dark">Fecha<span class="ms-1 asterisco">*</span></label>
+          <input type="date" class="form-control mx-2" id="fechaPedirCita" name="fechaPedirCita" value="">
+        </div>
 
-      <div class="mb-3 d-flex mx-5">
-        <label for="nombre" class="form-label fw-bold text-dark">Hora<span class="ms-1 asterisco">*</span></label>
-        <input type="text" class="form-control" id="horaPedirCita" name="horaPedirCita" placeholder="Introduce la hora" style="margin-left: 17px; width: 268px;">
+        <div class="mb-3 d-flex mx-5">
+          <label for="nombre" class="form-label fw-bold text-dark">Hora<span class="ms-1 asterisco">*</span></label>
+          <input type="text" class="form-control" id="horaPedirCita" name="horaPedirCita"
+            placeholder="Introduce la hora" style="margin-left: 17px; width: 268px;">
+        </div>
       </div>
-</div>
-
-      <!--FORMULARIO CREAR PACIENTE-->
-
-      <div *ngIf="mostrarFormCrearPaciente">
-        <div class="container-fluid mt-5">
-            <div class="row">
-              <!-- Columna Izquierda -->
-              <div class="col-md-6">
-                <h3>Información Personal</h3>
-                <div class="row">
-                  <!-- Subcolumna Izquierda -->
-                  <div class="col-md-6">
-                    <div class="mb-3">
-                      <label for="nombre" class="form-label">Nombre<span class="ms-1 asterisco">*</span></label>
-                      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" [(ngModel)]="paciente.nombre" required>
-                    </div>
-        
-                    <div class="mb-3">
-                      <label for="pregunta2" class="form-label">Primer Apellido<span class="ms-1 asterisco">*</span></label>
-                      <input type="text" class="form-control" id="pregunta2" name="pregunta2" placeholder="Primer apellido" [(ngModel)]="paciente.primerApellido">
-                    </div>
-        
-                    <div class="mb-3">
-                      <label for="pregunta3" class="form-label">Segundo Apellido<span class="ms-1 asterisco">*</span></label>
-                      <input type="text" class="form-control" id="pregunta3" name="pregunta3" placeholder="Segundo apellido" [(ngModel)]="paciente.segundoApellido">
-                    </div>
-        
-                    <div class="mb-3">
-                      <label for="pregunta4" class="form-label">Fecha Nacimiento<span class="ms-1 asterisco">*</span></label>
-                      <input type="text" class="form-control" id="pregunta4" name="pregunta4" placeholder="Fecha Nacimiento" [(ngModel)]="paciente.fechaNacimiento">
-                    </div>
-                  </div>
-        
-                  <!-- Subcolumna Derecha -->
-                  <div class="col-md-6">
-                    <div class="mb-3">
-                      <label for="pregunta5" class="form-label">Número Teléfono<span class="ms-1 asterisco">*</span></label>
-                      <input type="text" class="form-control" id="pregunta5" name="pregunta5" placeholder="Número Télefono" [(ngModel)]="paciente.numeroTelefono">
-                    </div>
       
-                    <div class="mb-3">
-                      <label for="pregunta6" class="form-label">DNI<span class="ms-1 asterisco">*</span></label>
-                      <input type="text" class="form-control" id="pregunta6" name="pregunta6" placeholder="DNI" [(ngModel)]="paciente.dni">
-                    </div>
-      
-                    <div class="mb-3">
-                      <label for="pregunta7" class="form-label">Sexo<span class="ms-1 asterisco">*</span></label>
-                      <select id="pregunta7" name="pregunta7" class="form-select" [(ngModel)]="paciente.sexo">
-                        <option value="">Selecciona una opción</option>
-                        <option value="hombre">Hombre</option>
-                        <option value="mujer">Mujer</option>
-                      </select>                    
-                    </div>
-       
-                  </div>
-                  
-                </div>
-              </div>
-        
-              <!-- Columna Derecha -->
-              <div class="col-md-6">
-                <h3>Dirección Personal</h3>
-                <div class="row">
-                  <!-- Subcolumna Izquierda -->
-                  <div class="col-md-6">
-                    <div class="mb-3">
-                      <label for="pregunta8" class="form-label">Província<span class="ms-1 asterisco">*</span></label>
-                      <select id="pregunta8" name="pregunta8" class="form-select" (change)="actualizarPoblaciones($event)" [(ngModel)]="paciente.provincia">
-                        <option value="">Selecciona una provincia</option>
-                        <option *ngFor="let provinciaItem of provinciasPoblaciones" [value]="provinciaItem.provincia">{{ provinciaItem.provincia }}</option>
-                      </select>
-                    </div>
-        
-                    <div class="mb-3">
-                      <label for="pregunta9" class="form-label">Código Postal<span class="ms-1 asterisco">*</span></label>
-                      <input type="text" class="form-control" id="pregunta9" name="pregunta9" placeholder="Código postal" [(ngModel)]="paciente.codigoPostal">
-                    </div>
-      
-                    <div class="mb-3">
-                      <label for="pregunta10" class="form-label">Número<span class="ms-1 asterisco">*</span></label>
-                      <input type="text" class="form-control" id="pregunta10" name="pregunta10" placeholder="Número" [(ngModel)]="paciente.numero">
-                    </div>
-      
-                    <div class="mb-3">
-                      <label for="pregunta11" class="form-label">Puerta<span class="ms-1 asterisco">*</span></label>
-                      <input type="text" class="form-control" id="pregunta11" name="pregunta11" placeholder="Puerta" [(ngModel)]="paciente.puerta">
-                    </div>
-                  </div>
-        
-                  <!-- Subcolumna Derecha -->
-                  <div class="col-md-6">
-                    <div class="mb-3">
-                      <label for="pregunta12" class="form-label">Población<span class="ms-1 asterisco">*</span></label>
-                      <select id="pregunta12" name="pregunta12" class="form-select" [(ngModel)]="poblacion.poblacion" (ngModelChange)="onPoblacionChange($event)">
-                        <option value="">Selecciona una población</option>
-                        <option *ngFor="let poblacionItem of poblacionesDisponibles" [value]="poblacionItem">{{ poblacionItem }}</option>
-                      </select>
-                    </div>
-        
-                    <div class="mb-3">
-                      <label for="pregunta13" class="form-label">Dirección<span class="ms-1 asterisco">*</span></label>
-                      <input type="text" class="form-control" id="pregunta13" name="pregunta13" placeholder="Dirección" [(ngModel)]="paciente.direccion">
-                    </div>
-        
-                    <div class="mb-3">
-                      <label for="pregunta14" class="form-label">Piso<span class="ms-1 asterisco">*</span></label>
-                      <input type="text" class="form-control" id="pregunta14" name="pregunta14" placeholder="Piso" [(ngModel)]="paciente.piso">
-                    </div>
-      
-                    <div class="mb-3">
-                      <label for="pregunta15" class="form-label">Escalera</label>
-                      <input type="text" class="form-control" id="pregunta15" name="pregunta15" placeholder="Escalera" [(ngModel)]="paciente.escalera">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-      </div>
-      </div>
-
+      <!--
       <app-componente-boton-retroceder-continuar [rutaProximoPaso]="rutaProximoPaso"
         [rutaAnteriorPaso]="rutaAnteriorPaso" [buttonText]="'Continuar'"
         [mostrarBotonRetroceder]="mostrarBotonRetroceder" [estiloBotonContinuar]="estiloBotonContinuar"
         [estiloBotonRetroceder]="estiloBotonRetroceder"></app-componente-boton-retroceder-continuar>
-
+-->
     </form>
 
   </div>
