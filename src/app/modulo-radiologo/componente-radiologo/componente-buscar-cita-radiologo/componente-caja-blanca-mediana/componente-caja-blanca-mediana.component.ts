@@ -2,10 +2,14 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CitasService } from '../../../../services/servicio-citas/citas.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CitasService } from '../../../../services/servicio-citas/citas.service';
 
 @Component({
   selector: 'app-componente-caja-blanca-mediana',
   templateUrl: './componente-caja-blanca-mediana.component.html',
+  styleUrls: ['./componente-caja-blanca-mediana.component.css'],
   styleUrls: ['./componente-caja-blanca-mediana.component.css'],
 })
 export class ComponenteCajaBlancaMedianaComponent {

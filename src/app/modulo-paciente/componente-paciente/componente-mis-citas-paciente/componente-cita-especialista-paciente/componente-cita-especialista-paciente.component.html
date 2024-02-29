@@ -16,6 +16,9 @@
       [tipoCita]="tipoCita"
       [fechaCita]="fechaCita"
       [horaCita]="horaCita"
+      [tipoCita]="tipoCita"
+      [fechaCita]="fechaCita"
+      [horaCita]="horaCita"
     ></app-componente-detalles-cita-paciente>
 
     <!-- CAJA DE IMÁGENES RADIOLÓGICAS -->
@@ -28,10 +31,18 @@
           <a (click)="abrirImagen(imagen.ruta_imagen)">
             <img
               src="assets/images/ImagenesPaciente/abrirImagenPaciente.svg"
+        <p *ngFor="let imagen of arrayImagenes">
+          {{ imagen.nombre_imagen }}
+          <a (click)="abrirImagen(imagen.ruta_imagen)">
+            <img
+              src="assets/images/ImagenesPaciente/abrirImagenPaciente.svg"
               alt=""
             />
           </a>
+            />
+          </a>
         </p>
+      </div>
       </div>
 
       <!-- DIV QUE SE ENCARGA DE ABRIR EN FORMA DE POP-UP LAS IMÁGENES -->
@@ -56,6 +67,7 @@
         </div>
       </div>
     </div>
+
 
     <!-- FIN CAJA DE IMÁGENES RADIOLÓGICAS -->
   </div>

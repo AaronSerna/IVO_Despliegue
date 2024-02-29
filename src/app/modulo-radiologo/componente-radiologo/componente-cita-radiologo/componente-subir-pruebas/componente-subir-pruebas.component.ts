@@ -11,6 +11,7 @@ import { tap } from 'rxjs';
   styleUrls: ['./componente-subir-pruebas.component.css'],
 })
 export class ComponenteSubirPruebasComponent implements OnInit {
+export class ComponenteSubirPruebasComponent implements OnInit {
   @Input() tituloImagenes: string = '';
   @Input() siguienteRuta: string = '';
 

@@ -29,10 +29,12 @@
               </a>
             </p>
             <button id="btn_eliminar"(click)="eliminarImagen(i)">Eliminar</button>
+            <button id="btn_eliminar"(click)="eliminarImagen(i)">Eliminar</button>
           </div>
         </div>
 
         <div *ngIf="mostrarPopUps" class="overlay">
+          <div class="popups-container d-flex flex-row" (click)="$event.stopPropagation()"> 
           <div class="popups-container d-flex flex-row" (click)="$event.stopPropagation()"> 
             <div *ngIf="selectedFileIndex !== null" class="popup">
               <p>{{ selectedFiles[selectedFileIndex].name }}</p> <!-- Agregar el nombre de la imagen encima--->
@@ -45,12 +47,18 @@
                 [anchoInforme]="625" 
                 [alturaInforme]="759"
                 (textoCambiado)="onTextoCambiado($event)">
+                [anchoInforme]="625" 
+                [alturaInforme]="759"
+                (textoCambiado)="onTextoCambiado($event)">
               </app-componente-informe-pruebas>
+              
               
             </div>
             <button class="boton-cerrar h-25" (click)="cerrarPopUps()">Guardar y Salir</button>
+            <button class="boton-cerrar h-25" (click)="cerrarPopUps()">Guardar y Salir</button>
           </div>
         </div>
+        
         
       </div>
     </div>
@@ -60,9 +68,15 @@
         <p class="mb-2">Informe de la prueba</p>
         <textarea id="textAreaOriginal" rows="25" cols="50" [(ngModel)]="textAreaOriginalContent"></textarea>
       </div>
+    <div class="col-md-9 d-flex justify-content-end">   <!------REALIZAMOS ESTE INFORME DIRECTAMENTE EN EL HTML PORQUE SE VA A TENER QUE DIFERENCIAR DE ALGUNA-->
+      <div class="d-flex flex-column" id="cajaTextAreaOriginal"> <!----MANERA CON LOS DEMÁS TEXTAREA CREADOS A PARTIR DE LA LLAMADA DEL COMPONENTE Y EL BUCLE-->
+        <p class="mb-2">Informe de la prueba</p>
+        <textarea id="textAreaOriginal" rows="25" cols="50" [(ngModel)]="textAreaOriginalContent"></textarea>
+      </div>
     </div>
 
     <div class="d-flex flex-end align-items-end justify-content-end">
+      <button routerLink="{{siguienteRuta}}" (click)="guardarInforme()" class="botonGenerarPDF">Generar</button>
       <button routerLink="{{siguienteRuta}}" (click)="guardarInforme()" class="botonGenerarPDF">Generar</button>
     </div>
   </div>

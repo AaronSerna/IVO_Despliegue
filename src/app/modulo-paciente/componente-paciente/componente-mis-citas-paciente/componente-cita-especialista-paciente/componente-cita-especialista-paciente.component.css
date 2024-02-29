@@ -37,6 +37,7 @@ p {
   height: 100%;
 }
 
+
 .popup-container {
   position: relative;
   background-color: white;
@@ -54,6 +55,31 @@ p {
   top: 3px;
   right: 5px;
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .imagen-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .popup-container {
+    height: 56.2vh;
+    width: 90vw;
+  }
+}
+@media (min-width: 901px) {
+  .imagen-container img {
+    max-width: 50vw;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 991px) {
+  .imagen-container img {
+    max-width: 50vw;
+    border-radius: 16px;
+  }
 }
 
 @media (max-width: 600px) {

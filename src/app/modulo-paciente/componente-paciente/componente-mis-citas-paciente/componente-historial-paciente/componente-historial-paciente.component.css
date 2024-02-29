@@ -16,6 +16,24 @@
   height: 26px;
 }
 
+:host ::ng-deep th {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+:host ::ng-deep tbody {
+  text-align: center;
+}
+
+:host ::ng-deep a {
+  margin-right: 6px;
+}
+
+:host ::ng-deep .papelera {
+  height: 26px;
+}
+
 :host ::ng-deep .sorting {
   justify-content: center;
   align-items: center;
@@ -100,6 +118,12 @@
   margin-bottom: 5px;
 }
 
+:host ::ng-deep #historialPaciente_wrapper .row .dataTables_length,
+:host ::ng-deep #historialPaciente_wrapper .row .dataTables_filter {
+  margin-top: -20px;
+  margin-bottom: 5px;
+}
+
 :host ::ng-deep .even:hover {
   background-color: #3569fd;
   cursor: pointer;
@@ -132,6 +156,19 @@
 
 :host ::ng-deep .table-hover tr:hover {
   background-color: #d3d3d3;
+}
+
+@media (max-width: 600px) {
+  /* Resolución móvil */
+  :host ::ng-deep #historialPaciente_filter input {
+margin-top: 25px;
+  }
+}
+/* Resolución medianas */
+@media (max-width: 991px) {
+  :host ::ng-deep #historialPaciente_filter input {
+    width: 72%;
+  }
 }
 
 @media (max-width: 600px) {

@@ -8,6 +8,13 @@
         <div class="invalid-feedback">No existe ninguna cita con ese numero</div>
         <button type="button" (click)="comprobarNumCita()" id="btn_comprobar">Comprobar</button>
       </div>
+    <form [formGroup]="form" (ngSubmit)="siguiente()" class="was-validated">
+      <div class="form-group">
+        <input type="text" placeholder="Introduce num. cita" class="mb-2" formControlName="numeroCita" pattern="[0-9]{5}[a-zA-Z]"><br>
+        <div class="valid-feedback">Número de cita válido</div>
+        <div class="invalid-feedback">No existe ninguna cita con ese numero</div>
+        <button type="button" (click)="comprobarNumCita()" id="btn_comprobar">Comprobar</button>
+      </div>
     </form>
   </div>
 </div>
