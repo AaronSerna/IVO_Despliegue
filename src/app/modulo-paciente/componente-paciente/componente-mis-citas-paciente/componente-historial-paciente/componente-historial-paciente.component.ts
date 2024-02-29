@@ -18,12 +18,11 @@ export class ComponenteHistorialPacienteComponent implements OnInit {
 
   ngOnInit() {
     this.initDataTable();
-  
 
     this.authService.obtenerUsuarioId().subscribe((id) => {
-          if (id !== null) {
-            this.idPaciente = id; // Si el dato recibido no es null, guardamos el id del paciente.
-          } 
+      if (id !== null) {
+        this.idPaciente = id; // Si el dato recibido no es null, guardamos el id del paciente.
+      }
     });
   }
 
@@ -48,17 +47,15 @@ export class ComponenteHistorialPacienteComponent implements OnInit {
       },
 
       ajax: (dataTablesParameters: any, callback: any) => {
-
         // Nos conectamos al servicio/endpoint que creamos:
-          if (this.idPaciente != null) {
-
-        this.citasService
-          .mostrarCitasDelPaciente(this.idPaciente)
-          .subscribe((data: any) => {
-            callback({
-              data: data,
+        if (this.idPaciente != null) {
+          this.citasService
+            .mostrarCitasDelPaciente(this.idPaciente)
+            .subscribe((data: any) => {
+              callback({
+                data: data,
+              });
             });
-          });
         }
       },
       columns: [
@@ -108,5 +105,4 @@ export class ComponenteHistorialPacienteComponent implements OnInit {
       },
     };
   }
-  
 }
