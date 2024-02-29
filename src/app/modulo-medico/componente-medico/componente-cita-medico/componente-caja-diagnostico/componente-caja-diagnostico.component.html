@@ -10,7 +10,7 @@
       class="btn guardar">Guardar</button>
     <button (click)="presiona_boton_editar_diagn()" *ngIf="botonEditarDiagn==false" type="button"
       class="btn editar-diagn">Editar Diagnóstico</button>
-    <button (click)="generarPDF()" *ngIf="botonGenerarPDFAzul==false" type="button" class="btn generar-pdf-azul">Generar PDF</button>
+    <button *ngIf="botonGenerarPDFAzul==false" type="button" class="btn generar-pdf-azul">Generar PDF</button>
     <button (click)="presiona_boton_guardar()" *ngIf="botonGuardarEdicion==false" type="button"
       class="btn guardar-edicion">Guardar edición</button>
   </div>
@@ -26,7 +26,7 @@
       class="btn guardar">Guardar</button>
     <button (click)="presiona_boton_editar_diagn()" *ngIf="botonEditarDiagn==false" type="button"
       class="btn editar-diagn">Editar Diagnóstico</button>
-    <button (click)="generarPDF()" *ngIf="botonGenerarPDFAzul==false" type="button" class="btn generar-pdf-azul">Generar PDF</button>
+    <button  *ngIf="botonGenerarPDFAzul==false" type="button" class="btn generar-pdf-azul">Generar PDF</button>
     <button (click)="presiona_boton_guardar()" *ngIf="botonGuardarEdicion==false" type="button"
       class="btn guardar-edicion">Guardar edición</button>
   </div>
