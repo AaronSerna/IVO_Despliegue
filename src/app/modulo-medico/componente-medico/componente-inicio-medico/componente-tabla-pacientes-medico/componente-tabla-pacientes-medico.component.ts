@@ -62,7 +62,7 @@ export class ComponenteTablaPacientesMedicoComponent implements OnInit {
             let id_paciente = full.id_paciente;
             return (
               '<div class="d-flex justify-content-evenly">' +
-              '<a class="abrirCita" href="http://localhost:4200/medico/citas/' +
+              '<a class="abrirCita" href="/medico/citas/' +
               dni +
               '/' +
               fecha +

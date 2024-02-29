@@ -84,7 +84,7 @@ export class ComponenteHistorialPacienteComponent implements OnInit {
 
             if (tipoCita === 'Radiologia') {
               abrirCitaUrl = `/paciente/misCitas/citaEspecialista?id=${idCita}&nombreDoctor=${nombreDoctor}&tipoCita=${tipoCita}&fechaCita=${fechaCita}&horaCita=${horaCita}`;
-              papeleraCitaUrl = `/paciente/misCitas/citaEspecialista?id=${idCita}&nombreDoctor=${nombreDoctor}&tipoCita=${tipoCita}&fechaCita=${fechaCita}&horaCita=${horaCita}`;
+              papeleraCitaUrl = `/paciente/misCitas/cancelarCita?numCita=${numCita}`;
             } else if (tipoCita === 'Medicina General') {
               abrirCitaUrl = `/paciente/misCitas/citaFacultativo?id=${idCita}&nombreDoctor=${nombreDoctor}&tipoCita=${tipoCita}&fechaCita=${fechaCita}&horaCita=${horaCita}`;
               papeleraCitaUrl = `/paciente/misCitas/cancelarCita?numCita=${numCita}`;
