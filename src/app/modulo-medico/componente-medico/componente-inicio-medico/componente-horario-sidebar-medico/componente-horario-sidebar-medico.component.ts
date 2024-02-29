@@ -61,9 +61,10 @@ export class ComponenteHorarioSidebarMedicoComponent {
     const storedUserId = localStorage.getItem('id') || '';
     this.http
       .get<any[]>(
-        'http://127.0.0.1:8000/api/citas/mostrarCitasPorFechaMedico/' +
+        'https://ivo-back.online/api/citas/mostrarCitasPorFechaMedico/' +
           fechaSeleccionada +
-          '/' + parseInt(storedUserId)
+          '/' +
+          parseInt(storedUserId)
       )
       .subscribe((resultado) => {
         this.citasDelDiaSeleccionado = resultado;
