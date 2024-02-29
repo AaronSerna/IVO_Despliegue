@@ -86,11 +86,11 @@ export class ComponenteHistorialPacienteComponent implements OnInit {
             var papeleraCitaUrl = '';
 
             if (tipoCita === 'Radiologia') {
-              abrirCitaUrl = `http://localhost:4200/paciente/misCitas/citaEspecialista?id=${idCita}&nombreDoctor=${nombreDoctor}&tipoCita=${tipoCita}&fechaCita=${fechaCita}&horaCita=${horaCita}`;
-              papeleraCitaUrl = `http://localhost:4200/paciente/misCitas/citaEspecialista?id=${idCita}&nombreDoctor=${nombreDoctor}&tipoCita=${tipoCita}&fechaCita=${fechaCita}&horaCita=${horaCita}`;
+              abrirCitaUrl = `/paciente/misCitas/citaEspecialista?id=${idCita}&nombreDoctor=${nombreDoctor}&tipoCita=${tipoCita}&fechaCita=${fechaCita}&horaCita=${horaCita}`;
+              papeleraCitaUrl = `/paciente/misCitas/citaEspecialista?id=${idCita}&nombreDoctor=${nombreDoctor}&tipoCita=${tipoCita}&fechaCita=${fechaCita}&horaCita=${horaCita}`;
             } else if (tipoCita === 'Medicina General') {
-              abrirCitaUrl = `http://localhost:4200/paciente/misCitas/citaFacultativo?id=${idCita}&nombreDoctor=${nombreDoctor}&tipoCita=${tipoCita}&fechaCita=${fechaCita}&horaCita=${horaCita}`;
-              papeleraCitaUrl = `http://localhost:4200/paciente/misCitas/cancelarCita?numCita=${numCita}`;
+              abrirCitaUrl = `/paciente/misCitas/citaFacultativo?id=${idCita}&nombreDoctor=${nombreDoctor}&tipoCita=${tipoCita}&fechaCita=${fechaCita}&horaCita=${horaCita}`;
+              papeleraCitaUrl = `/paciente/misCitas/cancelarCita?numCita=${numCita}`;
             }
 
             return (

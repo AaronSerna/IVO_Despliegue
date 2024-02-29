@@ -49,8 +49,8 @@ export class ComponenteCitasAdministrativoComponent implements OnInit {
             // DIV PARA LOS ICONOS
             return (
               '<div class="d-flex flex-row justify-content-center">' +
-              `<a href="http://localhost:4200/administrativo/modificarCita?idCita=${idCita}&idPaciente=${idPaciente}&nombrePaciente=${nombrePaciente}"><img class="custom-imagen-1" src="../../../../../assets/images/ImagenesAdministrativo/editar.svg" alt=""></a>` +
-              `<a href="http://localhost:4200/administrativo/eliminarCita?numCita=${numCita}&nombrePaciente=${nombrePaciente}"><img class="custom-imagen-2" src="../../../../../assets/images/ImagenesAdministrativo/papelera.svg" alt=""></a>`
+              `<a href="/administrativo/modificarCita?idCita=${idCita}&idPaciente=${idPaciente}&nombrePaciente=${nombrePaciente}"><img class="custom-imagen-1" src="../../../../../assets/images/ImagenesAdministrativo/editar.svg" alt=""></a>` +
+              `<a href="/administrativo/eliminarCita?numCita=${numCita}&nombrePaciente=${nombrePaciente}"><img class="custom-imagen-2" src="../../../../../assets/images/ImagenesAdministrativo/papelera.svg" alt=""></a>`
             );
           },
         },

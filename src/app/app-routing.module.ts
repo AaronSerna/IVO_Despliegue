@@ -17,6 +17,8 @@ import { ComponenteCrearCitaPasoDosComponent } from './modulo-administrativo/com
 import { ComponenteCrearCitaPasoTresComponent } from './modulo-administrativo/componente-administrativo/componente-crear-cita-administrativo/componente-crear-cita-paso-tres/componente-crear-cita-paso-tres.component';
 import { ComponenteCrearPacientePasoDosComponent } from './modulo-administrativo/componente-administrativo/componente-crear-paciente-administrativo/componente-crear-paciente-paso-dos/componente-crear-paciente-paso-dos.component';
 import { ComponenteCrearPacientePasoTresComponent } from './modulo-administrativo/componente-administrativo/componente-crear-paciente-administrativo/componente-crear-paciente-paso-tres/componente-crear-paciente-paso-tres.component';
+import { ConfirmacionCreacionPacienteComponent } from './modulo-administrativo/componente-administrativo/componente-crear-paciente-administrativo/confirmacion-creacion-paciente/confirmacion-creacion-paciente.component';
+
 import { ConfirmacionCreacionCitaComponent } from './modulo-administrativo/componente-administrativo/componente-crear-cita-administrativo/confirmacion-creacion-cita/confirmacion-creacion-cita.component';
 
 // IMPORTS RADIÓLOGO:
@@ -106,7 +108,7 @@ const routes: Routes = [
 
   {
     path: 'administrativo/crearPaciente/confirmacionCreacionPaciente',
-    component: ConfirmacionCreacionCitaComponent,
+    component: ConfirmacionCreacionPacienteComponent,
     canActivate: [LoginGuard, RolGuard],
 
     data: {
