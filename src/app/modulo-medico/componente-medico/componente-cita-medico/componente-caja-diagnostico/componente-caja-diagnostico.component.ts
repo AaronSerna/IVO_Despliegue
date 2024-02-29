@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { StylingService } from '../../services/styling.service';
 import { SharedService } from '../../services/shared.service';
-import { jsPDF } from 'jspdf';
+//import { jsPDF } from 'jspdf';
 
 @Component({
   selector: 'app-componente-caja-diagnostico',
@@ -31,7 +31,7 @@ export class ComponenteCajaDiagnosticoComponent implements OnInit {
     });
   }
 
-  generarPDF() {
+  /*generarPDF() {
     let pdf = new jsPDF();
 
     // Obtener la fecha actual
@@ -111,7 +111,7 @@ export class ComponenteCajaDiagnosticoComponent implements OnInit {
       pdf.save('informe.pdf');
     }
   }
-
+*/
 
 
   // BOTONES Y TEXT AREA
