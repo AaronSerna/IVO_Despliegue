@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { CitasService } from '../../../../services/servicio-citas/citas.service';
 import { AuthService } from '../../../../services/servicio-auth/auth.service';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-componente-historial-paciente',
