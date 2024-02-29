@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
 import { DataTablesModule } from 'angular-datatables';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // IMPORTACIONES ADMINISTRATIVO:
 import { ComponenteAdministrativoComponent } from './componente-administrativo/componente-administrativo.component';
@@ -23,7 +24,7 @@ import { ConfirmacionCreacionCitaComponent } from './componente-administrativo/c
 import { ConfirmacionCreacionPacienteComponent } from './componente-administrativo/componente-crear-paciente-administrativo/confirmacion-creacion-paciente/confirmacion-creacion-paciente.component';
 
 // IMPORTACIÓN MÓDULO ELEMENTOS GENERALES:
-import { ModuloElementosGeneralesModule} from '../modulo-elementos-generales/modulo-elementos-generales.module';
+import { ModuloElementosGeneralesModule } from '../modulo-elementos-generales/modulo-elementos-generales.module';
 
 @NgModule({
   declarations: [
@@ -41,14 +42,16 @@ import { ModuloElementosGeneralesModule} from '../modulo-elementos-generales/mod
     ConfirmacionModificacionCitaComponent,
     ConfirmacionEliminacionCitaComponent,
     ConfirmacionCreacionCitaComponent,
-    ConfirmacionCreacionPacienteComponent,
+    ConfirmacionCreacionPacienteComponent
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
     RouterModule,
     ModuloElementosGeneralesModule,
-    DataTablesModule
+    DataTablesModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
 })
-export class ModuloAdministrativoModule { }
+export class ModuloAdministrativoModule {}

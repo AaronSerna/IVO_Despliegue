@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../app-routing.module';
-
+import { ReactiveFormsModule } from '@angular/forms';
 // IMPORTACIONES RADIÓLOGO:
 import { ComponenteRadiologoComponent } from './componente-radiologo/componente-radiologo.component';
 import { ComponenteBuscarCitaRadiologoComponent } from './componente-radiologo/componente-buscar-cita-radiologo/componente-buscar-cita-radiologo.component';
@@ -28,9 +28,14 @@ import { ModuloElementosGeneralesModule } from '../modulo-elementos-generales/mo
     ComponenteCajaInformacionPacienteComponent,
     ComponenteConfirmacionInformeComponent,
   ],
-  imports: [CommonModule, AppRoutingModule, ModuloElementosGeneralesModule, FormsModule],
-
-  exports: [
+  imports: [
+    CommonModule,
+    AppRoutingModule,
+    ModuloElementosGeneralesModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
+
+  exports: [],
 })
 export class ModuloRadiologoModule {}

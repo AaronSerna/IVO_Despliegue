@@ -3,9 +3,10 @@ import { Component,Input } from '@angular/core';
 @Component({
   selector: 'app-componente-pasos-formulario',
   templateUrl: './componente-pasos-formulario.component.html',
-  styleUrls: ['./componente-pasos-formulario.component.css']
+  styleUrls: ['./componente-pasos-formulario.component.css'],
 })
 export class ComponentePasosFormularioComponent {
+  // Componente que muestra los pasos de los formularios.
   @Input() mostrarUltimaPregunta: boolean = true;
   @Input() texto1: string = '';
   @Input() texto2: string = '';
@@ -13,7 +14,6 @@ export class ComponentePasosFormularioComponent {
   @Input() texto4: string = '';
   @Input() texto5: string = '';
 
-  
   @Input() estilosPaso1: any = {};
   @Input() estilosCuadradoPaso1: any = {};
 

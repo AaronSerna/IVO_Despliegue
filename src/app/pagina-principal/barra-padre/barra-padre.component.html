@@ -4,17 +4,20 @@
     <!-- Título y foto de IVO -->
     <div id="logoIvo"
         class="position-absolute top-0 start-10 d-flex align-items-center mb-3 mt-2 mb-md-0 me-md-auto text-white">
-        <img src="../../../assets/images/logotipoIvo.png" alt="" class="img-fluid">
+        <img src="assets/images/logotipoIvo.png" alt="" class="img-fluid">
     </div>
 
     <!-- Iconos de roles -->
     <app-menu-usuarios id="menus"> </app-menu-usuarios>
 
     <!-- Icono 'Salir' -->
-    <div id="salir"
-        class="position-absolute d-flex flex-column align-center bottom-0 start-10 d-flex align-items-center text-white">
-        <img src="../../../assets/images/salir.svg" alt="" width="32" height="32" class="rounded-circle img-fluid">
-        <p>{{salir}}</p>
+    <div id="salir">
+        <a (click)="logout()" class="d-flex flex-column nav-link">
+            <img src="assets/images/salir.svg" alt="" width="43">
+            <p class="d-flex">
+                {{salir}}
+            </p>
+        </a>
     </div>
 </div>
 

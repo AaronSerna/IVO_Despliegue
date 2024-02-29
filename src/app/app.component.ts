@@ -6,16 +6,14 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-
-  title = 'componentesProyecto';  
+  title = 'componentesProyecto';
   mostrarBarra: boolean = true; // boolean para mostrar u ocultar el sidebar.
 
   constructor(private router: Router) {}
 
-  
   ngOnInit(): void {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
@@ -23,9 +21,11 @@ export class AppComponent {
         this.detectarRuta();
       });
   }
-// Método para detectar la ruta. Si la ruta es /paciente, el sidebar no se mostrará.
+  // Método para detectar la ruta. Si la ruta es /paciente, el sidebar no se mostrará.
   private detectarRuta(): void {
     const ruta = this.router.url;
-    this.mostrarBarra = !ruta.startsWith('/paciente');
+    this.mostrarBarra = !(
+      ruta.startsWith('/paciente') || ruta.startsWith('/login')
+    );
   }
 }

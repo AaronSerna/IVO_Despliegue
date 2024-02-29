@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ComponenteDetallesCitaPacienteComponent {
   @Input() nombreDoctor: string = '';
-  @Input() tipoDoctor: string = '';
+  @Input() tipoCita: string = '';
   @Input() fechaCita: string = '';
   @Input() horaCita: string='';
 }

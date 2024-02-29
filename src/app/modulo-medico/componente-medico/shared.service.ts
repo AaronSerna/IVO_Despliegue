@@ -6,6 +6,12 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class SharedService {
+  /** 
+    Este servicio se usa especificamente para poder
+    cambiar el boolean del readonly del text-area de 
+    un diagnostico. 
+    Este cambia cuando un boton se acciona.
+   */
   private readonlyStatusSubject = new Subject<boolean>();
 
   readonlyStatus$ = this.readonlyStatusSubject.asObservable();

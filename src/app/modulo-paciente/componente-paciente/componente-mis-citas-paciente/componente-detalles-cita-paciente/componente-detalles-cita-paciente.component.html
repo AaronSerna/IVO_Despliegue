@@ -1,6 +1,6 @@
 <!-- CAJAS INFORMACIÓN -->
 
-<div class="d-flex cajaDoctor w-100">
+<div class="d-flex cajaDoctor w-75">
   <!--
   <img
     class="img-fluid"
@@ -8,21 +8,21 @@
     alt=""
   />
 -->
-  <p class="mx-5 fs-5 mt-4">
-    <span class="fw-bold">{{ nombreDoctor }}</span>
+  <p class="mx-4 fs-5 mt-3">
+    <span class="fw-bold fs-4">{{ nombreDoctor }}</span>
     <br />
-    <span class="rol fs-6">{{ tipoDoctor }}</span>
+    <span id="dd" class="rol fs-6">{{ tipoCita }}</span>
   </p>
 </div>
 
-<div class="cajaFechaHora mt-3 pt-2 w-100" style="font-size: 18px">
-  <p class="mx-5 my-1 fw-bold">
+<div class="cajaFechaHora mt-3 pt-2 " style="font-size: 16px; width: 300px;">
+  <p class="mx-4 my-1 fw-bold">
     Fecha de la cita:
-    <span class="fecha fw-light"> {{ fechaCita }}</span>
+    <span class="mx-1 fecha fw-light"> {{ fechaCita }}</span>
   </p>
 
-  <p class="mx-5 fw-bold">
+  <p class="mx-4 fw-bold">
     Hora:
-    <span class="fecha fw-light">{{ horaCita }}</span>
+    <span class="mx-1 fecha fw-light">{{ horaCita }}</span>
   </p>
 </div>

@@ -5,6 +5,7 @@
 [botonCrearCita]="false"
 [botonSalirPaciente]="false"
 [rutaRetroceder]="'administrativo/citas'"
+[rutaCancelar]="'administrativo/citas'"
 
 ></app-componente-botones-cabecera>
 
@@ -23,8 +24,8 @@
     [texto2]="'Asignar contraseña'"
     [texto3]="'Confirmar datos'"
 
-    [mostrarNuevoMedico]="true"
-    [mostrarNuevaFecha]="true"
+    [mostrarNuevoMedico]="false"
+    [mostrarNuevaFecha]="false"
     [mostrarNuevaHora]="false"
 
     [estilosPaso1]="{ 'color': '#b7b7b7'}"
@@ -40,7 +41,7 @@
     [rutaAnteriorPaso]="'/administrativo/crearPaciente'"
 
     [mostrarBotonRetroceder]="true"
-
+    [mostrarFormularioCrearPacientePaso2]="true"
 
     
 ></app-componente-caja-blanca>

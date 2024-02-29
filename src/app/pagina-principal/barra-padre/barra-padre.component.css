@@ -6,6 +6,6 @@
   margin-top: 140px;
 }
 
-#salir p {
-  color: black;
+#salir {
+  cursor: pointer;
 }

@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // ANGULAR MATERIAL
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,8 +17,16 @@ import { ModuloElementosGeneralesModule } from './modulo-elementos-generales/mod
 import { ModuloAdministrativoModule } from './modulo-administrativo/modulo-administrativo.module';
 import { ModuloRadiologoModule } from './modulo-radiologo/modulo-radiologo.module';
 import { ModuloPacienteModule } from './modulo-paciente/modulo-paciente.module';
-import {ModuloMedicoModule} from "./modulo-medico/modulo-medico.module";
+import { ModuloMedicoModule } from './modulo-medico/modulo-medico.module';
 
+// IMPORTACIONES SERVICIOS:
+
+import { CitasService } from './services/servicio-citas/citas.service';
+import { UsuariosService } from './services/servicio-usuarios/usuarios.service';
+import { ImagenesService } from './services/servicio-imagenes/imagenes.service';
+
+//IMPORTACION TOKEN INTERCEPTOR
+import { TokenInterceptor } from './Interceptor/token.interceptor';
 
 @NgModule({
   declarations: [AppComponent, ComponenteLoginComponent],
@@ -33,9 +42,20 @@ import {ModuloMedicoModule} from "./modulo-medico/modulo-medico.module";
     ModuloPacienteModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    CitasService, 
+    UsuariosService, 
+    ImagenesService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

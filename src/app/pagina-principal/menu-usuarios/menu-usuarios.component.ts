@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/servicio-auth/auth.service';
 
 @Component({
   selector: 'app-menu-usuarios',
@@ -6,59 +8,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu-usuarios.component.css'],
 })
 export class MenuUsuariosComponent {
-  titulos: string[] = [
-    // RUTAS ADMINISTRATIVO:
-    'CitasAdmin',
-    'Crear paciente',
-    'Crear cita',
-    '',
+  nombreUsuario: string = '';
 
-    // RUTAS RADIÓLOGO:
-    'Buscar cita',
-    'CitasRadiologo',
-    '',
+  constructor(private router: Router, private authService: AuthService) {}
 
-    // RUTAS MÉDICO:
-    'Inicio',
-    'CitaMedico',
-    '',
-  ];
+  roleUser?: number;
 
-  imagenes: string[] = [
+  ngOnInit() {
+    this.roleUser = Number(localStorage.getItem('rol'));
 
-    // IMÁGENES ADMINISTRATIVO:
-    '../../../assets/images/ImagenesAdministrativo/Citas.svg',
-    '../../../assets/images/ImagenesAdministrativo/crearPaciente.svg',
-    '../../../assets/images/ImagenesAdministrativo/crearCita.svg',
-    '../../../assets/images/ImagenesAdministrativo/usuario.svg',
+    this.authService.obtenerUsuarioNombre().subscribe((nombre) => {
+      this.nombreUsuario = nombre; // Almacenamos el nombre y el apellido del usuario.
+    });
+  }
 
-    // IMÁGENES RADIÓLOGO:
-    '../../../assets/images/ImagenesRadiologo/BuscarCita.svg',
-    '../../../assets/images/ImagenesRadiologo/citasRadiologo.svg',
-    '../../../assets/images/ImagenesRadiologo/usuario.svg',
-
-    // IMÁGENES MÉDICO:
-    '../../../assets/images/ImagenesMedico/inicio.svg',
-    '../../../assets/images/ImagenesMedico/citaMedico.svg',
-    '../../../assets/images/ImagenesMedico/usuario.svg',
-  ];
-
-  // Método usado para dirigir al usuario a las rutas dependiendo de los iconos (enlaces) pinchados
-  obtenerRuta(enlace: string): string {
-    const rutas: { [key: string]: string } = {
-      //ADMINISTRATIVO:
-      CitasAdmin: 'administrativo/citas',
-      'Crear paciente': 'administrativo/crearPaciente',
-      'Crear cita': 'administrativo/crearCita',
-
-      //RADIÓLOGO:
-      'Buscar cita': 'radiologo/buscarCita',
-      CitasRadiologo: 'radiologo/citas',
-
-      //MÉDICO:
-      Inicio: 'medico/inicio',
-      CitaMedico: 'medico/citas',
-    };
-    return rutas[enlace];
+  //Metodo para checkear la ruta y mostrar el icono de citas desactivado o activado
+  isActive(route: string): boolean {
+    return this.router.isActive(route, true);
   }
 }

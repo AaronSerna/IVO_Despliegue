@@ -5,12 +5,7 @@
 .asterisco {
   color: #f00;
 }
-#checkbox1,
-#checkbox2,
-#checkbox3 {
-  border: 1px solid red;
-  color: blue;
-}
+
 input[type="checkbox"] {
   border: 8px solid #e2e7eb;
   width: 17px;
@@ -19,4 +14,13 @@ input[type="checkbox"] {
 
 label {
   color: #838383;
+}
+.labelPaciente{
+
+position: fixed;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+margin-top: -10px;
 }

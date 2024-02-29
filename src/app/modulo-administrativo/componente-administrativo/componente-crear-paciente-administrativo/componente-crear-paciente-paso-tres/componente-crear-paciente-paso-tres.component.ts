@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input,Output } from '@angular/core';
 
 @Component({
   selector: 'app-componente-crear-paciente-paso-tres',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./componente-crear-paciente-paso-tres.component.css']
 })
 export class ComponenteCrearPacientePasoTresComponent {
+  @Input() mostrarResumenDatosCrearPaciente: boolean = true;
 
 }
