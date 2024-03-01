@@ -25,10 +25,10 @@ export class UsuariosService {
   crearUsuarioPaciente(datos: any): Observable<any> {
     // Ajusta la URL según tu configuración
     return this.http.post(
-      'http://localhost/ivo_backend/public/api/usuarios/crearUsuarioPaciente',
-      datos
+      //'http://localhost/ivo_backend/public/api/usuarios/crearUsuarioPaciente',
+      //datos
 
-      // 'https://ivo-back.online/api/usuarios/crearUsuarioPaciente', datos
+       'https://ivo-back.online/api/usuarios/crearUsuarioPaciente', datos
     );
   }
 }
