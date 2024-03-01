@@ -37,7 +37,7 @@
           <div class="popups-container d-flex flex-row" (click)="$event.stopPropagation()">
             <div *ngIf="selectedFileIndex !== null" class="popup">
               <p>{{ selectedFiles[selectedFileIndex].name }}</p> <!-- Agregar el nombre de la imagen encima--->
-              <img [src]="crearUrl(selectedFiles[selectedFileIndex])" alt="Imagen"
+              <img [src]="getSafeUrl(selectedFiles[selectedFileIndex])" alt="Imagen"
                 style="max-width: 100%; max-height: 90%;">
 
 
