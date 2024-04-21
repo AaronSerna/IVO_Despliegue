@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CitasService } from '../../../../services/servicio-citas/citas.service';
-import { jsPDF } from 'jspdf';
+//import { jsPDF } from 'jspdf';
 
 @Component({
   selector: 'app-componente-informe-doctor-paciente',
@@ -77,7 +77,7 @@ PARA QUE FUNCIONE, HABRÁ QUE INSTALAR NODE MODULES (NPM INSTALL) Y SI NO SE HA 
 npm install jspdf
 
 Y DESCOMENTAR ESTE MÉTODO.
-*/
+
   generarPDF() {
     let pdf = new jsPDF();
 
@@ -163,5 +163,5 @@ Y DESCOMENTAR ESTE MÉTODO.
     } else {
       pdf.save('informe.pdf');
     }
-  }
+  }*/
 }

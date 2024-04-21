@@ -17,6 +17,7 @@
               "jspdf",
               "raf",
               "html2canvas",
+              "canvg",
               "core-js",
               "rgbcolor",
               "dompurify",
