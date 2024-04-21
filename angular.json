@@ -18,6 +18,8 @@
               "raf",
               "html2canvas",
               "core-js",
+              "rgbcolor",
+              "dompurify",
               "@babel/runtime-corejs3"
             ],
             "outputPath": "dist/componentes-proyecto",
