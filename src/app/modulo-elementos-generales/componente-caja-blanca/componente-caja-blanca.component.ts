@@ -1951,7 +1951,6 @@ export class ComponenteCajaBlancaComponent {
   @Input() texto2: string = '';
   @Input() texto3: string = '';
   @Input() texto4: string = '';
-  @Input() texto5: string = '';
 
   @Input() labelNuevoMedico: string = '';
   @Input() labelNuevaFecha: string = '';
@@ -1989,8 +1988,7 @@ export class ComponenteCajaBlancaComponent {
   @Input() estilosPaso4: any = {};
   @Input() estilosCuadradoPaso4: any = {};
 
-  @Input() estilosPaso5: any = {};
-  @Input() estilosCuadradoPaso5: any = {};
+
 
   @Input() rutaProximoPaso: string = '';
   @Input() rutaAnteriorPaso: string = '';

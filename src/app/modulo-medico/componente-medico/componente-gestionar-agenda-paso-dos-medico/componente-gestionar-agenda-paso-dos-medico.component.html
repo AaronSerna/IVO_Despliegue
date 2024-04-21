@@ -1,0 +1,33 @@
+<div class="row mx-3 mt-2">
+    <app-componente-botones-cabecera [tituloCabecera]="'Gestionar agenda'" [botonRetroceder]="true"
+        [botonCrearCita]="false" [botonCancelar]="true" [botonSalirPaciente]="false" [rutaRetroceder]="'medico/inicio'"
+        [rutaCancelar]="'medico/inicio'"></app-componente-botones-cabecera>
+</div>
+<div class="row mx-4 mt-2 bg-light rounded">
+
+
+    <div class="row">
+        <app-componente-pasos-formulario [texto1]="'Selección de fecha'" [texto2]="'Resumen de los datos'"
+            [estilosPaso1]="{ color: '#b7b7b7' }" [estilosCuadradoPaso2]="{ 'background-color': '#3b82f6' }"
+            [estilosPaso2]="{ color: '#3b82f6' }" [mostrarUltimaPregunta]="false"></app-componente-pasos-formulario>
+    </div>
+
+
+    <div class="row text-center mt-5">
+        <div>
+            <h2 class="fw-bold mt-5">Resumen de los datos</h2>
+            <h5 class="mt-4 text-center"><strong>Rango de fechas seleccionado:</strong> <span> {{rangoFechas}}</span>
+            </h5>
+        </div>
+
+
+        <div class="row justify-content-center mt-5 mx-3">
+            <a class=" btn botonRetroceso flex-row d-flex" href="/medico/gestionarAgenda">
+                <img class="mx-1" src="assets/images/ImagenesGenerales/flechaRetrocesoColorBlanco.svg" />
+                <p>Retroceder</p>
+            </a>
+            <a class="btn botonContinuar mx-5" (click)="actualizarAgendaMedico()">
+                <p>Finalizar</p>
+            </a>
+        </div>
+    </div>

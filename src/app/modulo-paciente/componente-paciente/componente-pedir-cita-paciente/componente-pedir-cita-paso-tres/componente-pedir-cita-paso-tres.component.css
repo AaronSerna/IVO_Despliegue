@@ -1,0 +1,103 @@
+label {
+  font-size: 1.1rem;
+  color: #838383;
+}
+
+/*BOTON RETROCESO */
+.botonRetroceso {
+  background-color: #414141;
+  height: 50px;
+  width: 200px;
+  font-size: 20px;
+  color: white;
+
+  border: 6px;
+}
+.botonRetroceso p {
+  line-height: 25px;
+  color: white;
+  margin-top: 5px;
+}
+
+.botonContinuar {
+  background-color: #3b82f6;
+  height: 50px;
+  width: 160px;
+  font-size: 20px;
+  color: white;
+}
+
+.botonContinuar p {
+  line-height: 35px;
+}
+
+.botonContinuar:active {
+  background-color: #3b82f6;
+  color: white;
+  opacity: 0.9;
+}
+
+:host ::ng-deep .fc-event {
+  border-radius: 46px;
+  width: 80px;
+  height: 30px;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+:host ::ng-deep .fc-timegrid-event-harness :hover {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+  opacity: 0.6;
+}
+
+:host ::ng-deep .fc-dayGridMonth-button.fc-button.fc-button-primary,
+:host ::ng-deep .fc-prev-button,
+:host ::ng-deep .fc-next-button {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+  margin: 3px;
+}
+
+:host ::ng-deep .fc-timegrid-event-harness .citaCogida {
+  background-color: #ff0000;
+  border-color: #ff0000;
+  opacity: 0.5;
+  pointer-events: none;
+}
+:host ::ng-deep .sinCita {
+  width: 85%;
+  height: 200px;
+  margin-left: 7%;
+  border-radius: 6px;
+  border: 3px solid #ff0000;
+  font-size: 1.4rem;
+  font-weight: bold;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/*:host ::ng-deep .fc-event-title {
+  font-weight: bold;
+ }*/
+
+.okupado {
+  background-color: #ffa2a2;
+  border-color: #ffa2a2;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Resolución móviles  */
+@media (max-width: 600px) {
+  .botonRetroceso {
+  }
+
+  .botonContinuar {
+    margin-top: 20px;
+  }
+}

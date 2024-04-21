@@ -14,6 +14,7 @@ import { ComponenteConfirmacionComponent } from './componente-confirmacion/compo
 import { ComponenteResumenDatosCrearCitaPasoTresComponent } from './componente-resumen-datos-crear-cita-paso-tres/componente-resumen-datos-crear-cita-paso-tres.component';
 import { ComponenteErrorComponent } from './componente-error/componente-error.component';
 import { ComponenteResumenDatosPacienteComponent } from "./componente-resumen-datos-paciente/componente-resumen-datos-paciente.component";
+import { ComponenteLoaderComponent } from './componente-loader/componente-loader.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ComponenteResumenDatosPacienteComponent } from "./componente-resumen-da
     ComponenteConfirmacionComponent,
     ComponenteResumenDatosCrearCitaPasoTresComponent,
     ComponenteErrorComponent,
-    ComponenteResumenDatosPacienteComponent
+    ComponenteResumenDatosPacienteComponent,
+    ComponenteLoaderComponent
   ],
 
   imports: [
@@ -42,7 +44,8 @@ import { ComponenteResumenDatosPacienteComponent } from "./componente-resumen-da
     ComponenteBotonRetrocederContinuarComponent,
     ComponenteConfirmacionComponent,
     ComponenteErrorComponent,
-    ComponenteResumenDatosCrearCitaPasoTresComponent
+    ComponenteResumenDatosCrearCitaPasoTresComponent,
+    ComponenteLoaderComponent
   ],
 })
 export class ModuloElementosGeneralesModule {}

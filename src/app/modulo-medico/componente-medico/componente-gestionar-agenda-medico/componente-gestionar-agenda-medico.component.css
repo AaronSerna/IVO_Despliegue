@@ -1,0 +1,93 @@
+label {
+  font-size: 1.1rem;
+  color: #838383;
+}
+
+.form-select {
+  width: 35vh;
+}
+
+/*BOTON RETROCESO */
+.botonRetroceso {
+  background-color: #414141;
+  height: 50px;
+  width: 200px;
+  font-size: 20px;
+  color: white;
+
+  border: 6px;
+}
+.botonRetroceso p {
+  line-height: 25px;
+  color: white;
+  margin-top: 5px;
+}
+
+.botonContinuar {
+  background-color: #3b82f6;
+  height: 50px;
+  width: 160px;
+  font-size: 20px;
+  color: white;
+}
+
+.botonContinuar p {
+  line-height: 35px;
+}
+
+.botonContinuar:active {
+  background-color: #3b82f6;
+  color: white;
+  opacity: 0.9;
+}
+
+/* Resolución móviles  */
+@media (max-width: 600px) {
+ 
+  .botonContinuar {
+    margin-top: 20px;
+  }
+}
+
+
+
+/**
+ * ESTILOS DEL CALENDARIO DE ANGULAR MATERIAL -------------
+ */
+
+.horario {
+  border-radius: 12px;
+  border: 1.5px solid #ccc;
+  background: #fff;
+  width: 380px;
+}
+
+:host ::ng-deep .mdc-button__label {
+  color: #092c4c;
+  font-weight: bolder;
+  font-size: 1.1rem;
+}
+
+:host ::ng-deep .horario .mat-calendar-table-header-divider {
+  display: none;
+}
+
+:host ::ng-deep .mat-calendar-table-header th {
+  color: #7f92a3;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+:host ::ng-deep .mat-calendar-body tr:nth-child(1) .mat-calendar-body-label{
+  color: white;
+}
+
+:host ::ng-deep .mat-calendar-body-cell-container {
+  color: #092c4c;
+  font-size: 1.1rem;
+}
+
+:host ::ng-deep .mat-calendar-body-selected {
+  background: #3569FD;
+  color: #ffff;
+}

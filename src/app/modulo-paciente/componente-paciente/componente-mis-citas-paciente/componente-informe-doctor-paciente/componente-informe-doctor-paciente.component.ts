@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CitasService } from '../../../../services/servicio-citas/citas.service';
-//import { jsPDF } from 'jspdf';
+import { jsPDF } from 'jspdf';
 
 @Component({
   selector: 'app-componente-informe-doctor-paciente',
@@ -13,21 +13,35 @@ export class ComponenteInformeDoctorPacienteComponent {
   @Input() numeroRowsTextarea: string = '';
   @Input() numeroColsTextarea: string = '';
   idCita: string = '';
+  fechaCita: string = '';
   contenidoTextarea: string = '';
 
   constructor(
     private citasService: CitasService,
     private route: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit() {
     // Almacenamos el id_cita recibido en la URl y mostramos el informe o diagnóstico perteneciente a ese id.
     this.route.queryParams.subscribe((params) => {
       this.idCita = params['id'] || '';
+      this.fechaCita = this.cambiarFormatoFecha(params['fechaCita']) || '';
+
       if (this.idCita) {
         this.mostrarContenidoTextarea();
       }
     });
+  }
+
+  // Función para formatear la fecha de YYY-mm-dd a dd-mm-yyyy
+  cambiarFormatoFecha(fecha: string): string {
+    let fechaNueva = new Date(fecha);
+    let dia = fechaNueva.getDate();
+    let mes = fechaNueva.getMonth() + 1; // Los meses son indexados desde 0
+    let year = fechaNueva.getFullYear();
+
+    // Formato dd-mm-yyyy
+    return `${dia < 10 ? '0' : ''}${dia}-${mes < 10 ? '0' : ''}${mes}-${year}`;
   }
 
   mostrarContenidoTextarea() {
@@ -57,18 +71,30 @@ export class ComponenteInformeDoctorPacienteComponent {
       });
   }
 
-}
- /* generarPDF() {
+  /* ESTE CÓDIGO GENERA LOS PDF PARA EL PACIENTE, ESTÁ COMENTADO PORQUE EN CLOUDFLARE DA ERROR LA IMPORTACIÓN DE 'jspdf'.
+PARA QUE FUNCIONE, HABRÁ QUE INSTALAR NODE MODULES (NPM INSTALL) Y SI NO SE HA INSTALADO CON ÉL 'jspdf',  EJECUTAR EL COMANDO:
+
+npm install jspdf
+
+Y DESCOMENTAR ESTE MÉTODO.
+*/
+  generarPDF() {
     let pdf = new jsPDF();
 
-    // Obtener la fecha actual
-    let fechaActual = new Date();
-    let dia = fechaActual.getDate();
-    let mes = fechaActual.toLocaleString('default', { month: 'long' }); // Nombre del mes
-    let anio = fechaActual.getFullYear();
+    // Extraer el día, mes y año de this.fechaCita
+    let fechaPartes = this.fechaCita.split('-');
+    let dia = parseInt(fechaPartes[0], 10);
+    let mesNumero = parseInt(fechaPartes[1], 10);
+    let anio = parseInt(fechaPartes[2], 10);
 
-    // Concatenar la fecha en el formato deseado. Ejemplo: Valencia, a 1 de enero de 2024.
-    let fecha = `${dia} de ${mes} de ${anio}`;
+    // Obtener el nombre del mes
+    let nombreMes = new Date(anio, mesNumero - 1, dia).toLocaleString(
+      'default',
+      { month: 'long' }
+    );
+
+    // Concatenar la fecha en el formato deseado. Ejemplo: 1 de marzo de 2024.
+    let fecha = `${dia} de ${nombreMes} de ${anio}`;
 
     let logoUrl = '/assets/images/IVO_CabeceraPDF.png';
     pdf.addImage(logoUrl, 'PNG', 55, -9, 110, 50);
@@ -139,4 +165,3 @@ export class ComponenteInformeDoctorPacienteComponent {
     }
   }
 }
-*/  

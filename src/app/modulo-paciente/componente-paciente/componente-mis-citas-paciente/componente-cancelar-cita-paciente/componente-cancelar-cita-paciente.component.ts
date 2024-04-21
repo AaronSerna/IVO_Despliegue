@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CitasService } from '../../../../services/servicio-citas/citas.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-componente-cancelar-cita-paciente',
@@ -12,7 +13,8 @@ export class ComponenteCancelarCitaPacienteComponent {
 
   constructor(
     private citasService: CitasService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -21,8 +23,16 @@ export class ComponenteCancelarCitaPacienteComponent {
     });
   }
 
-  cancelarCita() { // Llamamos al servicio de citas para conectar con el endpoint 'cancelarCita'.
-    this.citasService.cancelarCita(this.numCita)
+  cancelarCita() {
+    // Llamamos al servicio de citas para conectar con el endpoint 'cancelarCita'.
+    this.citasService
+      .cancelarCita(this.numCita)
+
+      .pipe(
+        tap(() => {
+          this.router.navigate(['paciente/misCitas/cancelarCitaConfirmacion']);
+        })
+      )
       .subscribe((data: any) => {
         // Cancelamos la cita.
       });

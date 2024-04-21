@@ -90,7 +90,6 @@ h1 {
   cursor: pointer;
 }
 
-
 .botonSI {
   background-color: #248e28;
   width: 250px;
@@ -120,4 +119,44 @@ h1 {
   background-color: #ff0000;
   color: white;
   opacity: 0.9; /* Cambia la opacidad para indicar el clic */
+}
+
+/* Resolución móviles  */
+@media (max-width: 600px) {
+  .popup-container {
+    width: 100%;
+  }
+
+  .cerrar-icon {
+    position: absolute;
+    top: 20%;
+    right: 2%;
+    cursor: pointer;
+  }
+
+  .botonSI {
+    margin-top: 20px;
+    width: 170px;
+    height: 60px;
+    font-size: 1rem;
+  }
+  .botonNO {
+    margin-top: 20px;
+    width: 170px;
+    height: 60px;
+    font-size: 1rem;
+  }
+}
+
+/* Resolución medianas */
+@media (max-width: 991px) {
+   .botonSI {
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+  .botonNO {
+    margin-top: 20px;
+  
+    font-size: 1rem;
+  }
 }

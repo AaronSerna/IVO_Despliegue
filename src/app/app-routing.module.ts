@@ -31,6 +31,9 @@ import { ComponenteConfirmacionInformeComponent } from './modulo-radiologo/compo
 import { ComponenteMedicoComponent } from './modulo-medico/componente-medico/componente-medico.component';
 import { ComponenteInicioMedicoComponent } from './modulo-medico/componente-medico/componente-inicio-medico/componente-inicio-medico.component';
 import { ComponenteCitaMedicoComponent } from './modulo-medico/componente-medico/componente-cita-medico/componente-cita-medico.component';
+import { ComponenteGestionarAgendaMedicoComponent } from "./modulo-medico/componente-medico/componente-gestionar-agenda-medico/componente-gestionar-agenda-medico.component";
+import {  ComponenteGestionarAgendaPasoDosMedicoComponent} from "./modulo-medico/componente-medico/componente-gestionar-agenda-paso-dos-medico/componente-gestionar-agenda-paso-dos-medico.component";
+import {  ComponenteGestionarAgendaConfirmacionMedicoComponent} from "./modulo-medico/componente-medico/componente-gestionar-agenda-confirmacion-medico/componente-gestionar-agenda-confirmacion-medico.component";
 
 // IMPORTS PACIENTE:
 import { ComponentePacienteComponent } from './modulo-paciente/componente-paciente/componente-paciente.component';
@@ -38,16 +41,18 @@ import { ComponentePedirCitaPacienteComponent } from './modulo-paciente/componen
 import { ComponentePedirCitaPasoDosComponent } from './modulo-paciente/componente-paciente/componente-pedir-cita-paciente/componente-pedir-cita-paso-dos/componente-pedir-cita-paso-dos.component';
 import { ComponentePedirCitaPasoTresComponent } from './modulo-paciente/componente-paciente/componente-pedir-cita-paciente/componente-pedir-cita-paso-tres/componente-pedir-cita-paso-tres.component';
 import { ComponentePedirCitaPasoCuatroComponent } from './modulo-paciente/componente-paciente/componente-pedir-cita-paciente/componente-pedir-cita-paso-cuatro/componente-pedir-cita-paso-cuatro.component';
-import { ComponentePedirCitaPasoCincoComponent } from './modulo-paciente/componente-paciente/componente-pedir-cita-paciente/componente-pedir-cita-paso-cinco/componente-pedir-cita-paso-cinco.component';
 
 import { ComponenteMisCitasPacienteComponent } from './modulo-paciente/componente-paciente/componente-mis-citas-paciente/componente-mis-citas-paciente.component';
 import { ComponenteCitaFacultativoPacienteComponent } from './modulo-paciente/componente-paciente/componente-mis-citas-paciente/componente-cita-facultativo-paciente/componente-cita-facultativo-paciente.component';
 import { ComponenteCitaEspecialistaPacienteComponent } from './modulo-paciente/componente-paciente/componente-mis-citas-paciente/componente-cita-especialista-paciente/componente-cita-especialista-paciente.component';
-import { ComponentePedirCitaPacienteFinalComponent } from './modulo-paciente/componente-paciente/componente-pedir-cita-paciente/componente-pedir-cita-paciente-final/componente-pedir-cita-paciente-final.component';
+import { ComponentePedirCitaPacienteConfirmacionComponent } from "./modulo-paciente/componente-paciente/componente-pedir-cita-paciente/componente-pedir-cita-paciente-confirmacion/componente-pedir-cita-paciente-confirmacion.component";
+import { ComponentePedirCitaPacienteErrorComponent } from './modulo-paciente/componente-paciente/componente-pedir-cita-paciente/componente-pedir-cita-paciente-error/componente-pedir-cita-paciente-error.component';
+
 import { ComponenteCancelarCitaPacienteComponent } from './modulo-paciente/componente-paciente/componente-mis-citas-paciente/componente-cancelar-cita-paciente/componente-cancelar-cita-paciente.component';
 import { ComponenteCancelarCitaPacienteFinalComponent } from './modulo-paciente/componente-paciente/componente-mis-citas-paciente/componente-cancelar-cita-paciente-final/componente-cancelar-cita-paciente-final.component';
 import { RolGuard } from './Guard/rol.guard';
 import { LoginGuard } from './Guard/login.guard';
+import { CitaActivaGuard } from './Guard/cita-activa.guard';
 
 
 const routes: Routes = [
@@ -246,7 +251,7 @@ const routes: Routes = [
   },
 
   // MÉDICO:
-  {
+ /* {
     path: 'medico',
     component: ComponenteMedicoComponent,
     canActivate: [LoginGuard, RolGuard],
@@ -254,7 +259,7 @@ const routes: Routes = [
     data: {
       idRol: 3,
     },
-  },
+  },*/
 
   {
     path: 'medico/inicio',
@@ -276,6 +281,36 @@ const routes: Routes = [
     },
   },
 
+  {
+    path: 'medico/gestionarAgenda',
+    component: ComponenteGestionarAgendaMedicoComponent,
+    canActivate: [LoginGuard, RolGuard],
+
+    data: {
+      idRol: 3,
+    },
+  },
+
+  {
+    path: 'medico/gestionarAgenda/gestionarAgendaPaso2',
+    component: ComponenteGestionarAgendaPasoDosMedicoComponent,
+    canActivate: [LoginGuard, RolGuard],
+
+    data: {
+      idRol: 3,
+    },
+  },
+
+  {
+    path: 'medico/gestionarAgenda/confirmacion',
+    component: ComponenteGestionarAgendaConfirmacionMedicoComponent,
+    canActivate: [LoginGuard, RolGuard],
+
+    data: {
+      idRol: 3,
+    },
+  },
+
   // PACIENTE:
   {
     path: 'paciente',
@@ -289,7 +324,7 @@ const routes: Routes = [
   {
     path: 'paciente/pedirCita',
     component: ComponentePedirCitaPacienteComponent,
-    canActivate: [LoginGuard, RolGuard],
+    canActivate: [LoginGuard, RolGuard, CitaActivaGuard],
 
     data: {
       idRol: 4,
@@ -299,7 +334,7 @@ const routes: Routes = [
   {
     path: 'paciente/pedirCita/pedirCitaPaso2',
     component: ComponentePedirCitaPasoDosComponent,
-    canActivate: [LoginGuard, RolGuard],
+    canActivate: [LoginGuard, RolGuard, CitaActivaGuard],
     data: {
       idRol: 4,
     },
@@ -308,7 +343,7 @@ const routes: Routes = [
   {
     path: 'paciente/pedirCita/pedirCitaPaso3',
     component: ComponentePedirCitaPasoTresComponent,
-    canActivate: [LoginGuard, RolGuard],
+    canActivate: [LoginGuard, RolGuard, CitaActivaGuard],
     data: {
       idRol: 4,
     },
@@ -317,16 +352,7 @@ const routes: Routes = [
   {
     path: 'paciente/pedirCita/pedirCitaPaso4',
     component: ComponentePedirCitaPasoCuatroComponent,
-    canActivate: [LoginGuard, RolGuard],
-    data: {
-      idRol: 4,
-    },
-  },
-
-  {
-    path: 'paciente/pedirCita/pedirCitaPaso5',
-    component: ComponentePedirCitaPasoCincoComponent,
-    canActivate: [LoginGuard, RolGuard],
+    canActivate: [LoginGuard, RolGuard, CitaActivaGuard],
     data: {
       idRol: 4,
     },
@@ -334,8 +360,17 @@ const routes: Routes = [
 
   {
     path: 'paciente/pedirCita/confirmacion',
-    component: ComponentePedirCitaPacienteFinalComponent,
-    canActivate: [LoginGuard, RolGuard],
+    component: ComponentePedirCitaPacienteConfirmacionComponent,
+    canActivate: [LoginGuard, RolGuard, CitaActivaGuard],
+    data: {
+      idRol: 4,
+    },
+  },
+
+  {
+    path: 'paciente/pedirCita/error',
+    component: ComponentePedirCitaPacienteErrorComponent,
+    canActivate: [LoginGuard, RolGuard, CitaActivaGuard],
     data: {
       idRol: 4,
     },

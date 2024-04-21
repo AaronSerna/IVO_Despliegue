@@ -1,49 +1,42 @@
 <div class="row mx-3 mt-2">
-  <app-componente-botones-cabecera
-    [tituloCabecera]="'Pedir cita'"
-    [botonRetroceder]="true"
-    [botonCrearCita]="false"
-    [botonCancelar]="true"
-    [botonSalirPaciente]="false"
-    [rutaRetroceder]="'paciente'"
-    [rutaCancelar]="'paciente'"
-  ></app-componente-botones-cabecera>
+  <app-componente-botones-cabecera [tituloCabecera]="'Pedir cita'" [botonRetroceder]="true" [botonCrearCita]="false"
+    [botonCancelar]="true" [botonSalirPaciente]="false" [rutaRetroceder]="'paciente'"
+    [rutaCancelar]="'paciente'"></app-componente-botones-cabecera>
 </div>
+<div class="row mx-4 mt-2 bg-light">
 
-<div class="row mx-4 mt-2" >
-  <app-componente-caja-blanca
-  [mostrarUltimaPregunta]="true"
-  [texto1]="'Tipo de cita'"
-  [texto2]="'Selección de médico'"
-  [texto3]="'Selección de fecha'"
-  [texto4]="'Citas disponibles'"
-  [texto5]="'Resumen de los datos'"
 
-    [estilosPaso1]="{ color: '#b7b7b7' }"
-    [estilosPaso2]="{ color: '#b7b7b7' }"
-    [estilosPaso3]="{ color: '#b7b7b7' }"
-    [estilosCuadradoPaso4]="{ 'background-color': '#3b82f6' }"
-    [estilosPaso4]="{ color: '#3b82f6' }"
-    [estilosPaso5]="{ color: '#b7b7b7' }"
-    
-    [tituloSeccionFormulario]="'Citas disponibles'"
-    [descripcionTituloFormulario]="'Selecciona una cita entre las disponibles'"
-    [rutaProximoPaso]="'/paciente/pedirCita/pedirCitaPaso5'"
-    [rutaAnteriorPaso]="'/paciente/pedirCita/pedirCitaPaso3'"
-    [mostrarBotonRetroceder]="true"
+  <div class="row">
+    <app-componente-pasos-formulario [texto1]="'Tipo de cita'" [texto2]="'Selección de médico'"
+      [texto3]="'Citas disponibles'" [texto4]="'Resumen de los datos'" [estilosPaso1]="{ color: '#b7b7b7' }"
+      [estilosPaso2]="{ color: '#b7b7b7' }" [estilosPaso3]="{ color: '#b7b7b7' }"
+      [estilosCuadradoPaso4]="{ 'background-color': '#3b82f6' }"
+      [estilosPaso4]="{ color: '#3b82f6' }"></app-componente-pasos-formulario>
+  </div>
 
-    [mostrarCheckboxesPedirCita]="true"
-    [mostrarTercerCheckboxPedirCita]="true"
-    [mostrarTercerLabelPedirCita]="true"
-    [estiloCheckboxesPaciente]="{ 'margin-left': '130px' }"
-    
-    [textoLabel1] ="' 04/11/2023 - 15:30'"
-    [textoLabel2] ="' 17/11/2023 - 10:55'"
-    [textoLabel3] ="' 20/12/2024 - 12:55'"
-    
 
-    [valueCheckbox1]="'04/11/2023 - 15:30'"
-    [valueCheckbox2]="'07/11/2023 - 10:21'"
-    [valueCheckbox3]="'07/11/2023 - 10:55'"
-  ></app-componente-caja-blanca>
-</div>
+
+  <div class="row text-center mt-5">
+    <div>
+      <h2 class="fw-bold mt-5">Resumen de los datos</h2>
+      <h5 class="mt-4 text-center"><strong>Tipo de cita:</strong> <span> {{tipoCita}}</span></h5>
+      <h5><strong>Médico:</strong> <span> {{nombreMedicoSeleccionado}}</span></h5>
+      <h5><strong>Fecha:</strong> <span> {{fechaSeleccionada}}</span></h5>
+      <h5><strong>Hora:</strong> <span> {{horaSeleccionada}}</span></h5>
+    </div>
+
+
+
+    <div class="row justify-content-center mt-5 mx-3">
+
+      <a class="btn botonRetroceso flex-row d-flex" href="/paciente/pedirCita/pedirCitaPaso3">
+        <img class="mx-1" src="assets/images/ImagenesGenerales/flechaRetrocesoColorBlanco.svg" />
+        <p>Retroceder</p>
+      </a>
+
+      <a class="btn botonContinuar mx-5" (click)="pedirCita()">
+        <p>Continuar</p>
+      </a>
+    </div>
+
+  </div>

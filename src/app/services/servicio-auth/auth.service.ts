@@ -7,8 +7,8 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class AuthService {
-  // private apiUrl = 'http://localhost/ivo_backend/public/api';
-  private apiUrl = 'https://ivo-back.online/api';
+   private apiUrl = 'http://localhost/ivo_backend/public/api';
+  //private apiUrl = 'https://ivo-back.online/api';
 
   private usuarioNombreCompletoSubject = new BehaviorSubject<string>(''); // Una única variable para nombre completo
   private usuarioIdSubject = new BehaviorSubject<number | null>(null);

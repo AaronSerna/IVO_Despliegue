@@ -38,7 +38,7 @@ export class ComponenteLoginComponent {
               this.router.navigateByUrl('/paciente');
               break;
             case 3:
-              this.router.navigateByUrl('/medico');
+              this.router.navigateByUrl('/medico/inicio');
               break;
             case 1:
               this.router.navigateByUrl('/radiologo');

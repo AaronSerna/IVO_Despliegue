@@ -1,29 +1,50 @@
+<app-componente-loader
+[mensajeCarga]="'Cargando Portal de Paciente...'"
+></app-componente-loader>
+
+
 <div class="row">
-  <app-componente-botones-cabecera
-    [tituloCabecera]="''"
-    [botonRetroceder]="true"
-    [botonCancelar]="false"
-    [botonCrearCita]="false"
-    [botonSalirPaciente]="true"
-    [estilosBotonSalirPaciente]="{ 'margin-top': '50px' }"
-  ></app-componente-botones-cabecera>
+  <app-componente-botones-cabecera [tituloCabecera]="''" [botonRetroceder]="true" [botonCancelar]="false"
+    [botonCrearCita]="false" [botonSalirPaciente]="true"
+    [estilosBotonSalirPaciente]="{ 'margin-top': '50px' }"></app-componente-botones-cabecera>
 </div>
 
 <!-- BOTONES 'PEDIR CITA' Y 'MIS CITAS' -->
-<div
-  class="col-md-12 d-flex flex-column justify-content-center align-center text-center h-50 mt-5"
->
-  <app-componente-boton-retroceder-continuar
-    [mostrarBotonRetroceder]="false"
-    [buttonText]="'Pedir cita'"
-    [rutaProximoPaso]="'/paciente/pedirCita'"
-    [estiloBotonRetroceder]="{ height: '200px;' }"
-  ></app-componente-boton-retroceder-continuar>
 
-  <app-componente-boton-retroceder-continuar
-    [mostrarBotonRetroceder]="false"
-    [buttonText]="'Mis citas'"
-    [rutaProximoPaso]="'/paciente/misCitas'"
-    [estiloBotonRetroceder]="{ height: '200px;' }"
-  ></app-componente-boton-retroceder-continuar>
+<div class="row h-50">
+
+  <div class="divBotones">
+    <button class="btn" (click)="comprobarCitaActiva()">
+      <p>Pedir cita</p>
+    </button>
+    <a class="btn mt-4" href="/paciente/misCitas">
+      <p>Mis citas</p>
+    </a>
+  </div>
+
+  <!-- Contenido del pop-up de cancelación -->
+  <div *ngIf="mostrarModal" class="overlay h-100 d-flex text-center align-center justify-content-center">
+    <div (click)="$event.stopPropagation()">
+      <div class="popup-container">
+
+        <div class="popup-contenido">
+          <div>
+            <img class="cerrar-icon" src="assets/images/ImagenesPaciente/iconoCerrarPopUp.svg" alt=""
+              (click)="cerrarModal()" />
+          </div>
+          <div>
+            <p class="fw-bold fs-3">Usted ya tiene una</p>
+            <p class="fw-bold fs-3 mt-2">cita activa.
+            <div class="row botonesCancelar d-flex justify-content-around mt-4">
+              <button class="btn botonCerrar" (click)="cerrarModal()">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
 </div>

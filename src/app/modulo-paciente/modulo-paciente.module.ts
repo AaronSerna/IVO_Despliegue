@@ -19,13 +19,13 @@ import { ComponenteDetallesCitaPacienteComponent } from './componente-paciente/c
 import { ComponentePedirCitaPasoDosComponent } from './componente-paciente/componente-pedir-cita-paciente/componente-pedir-cita-paso-dos/componente-pedir-cita-paso-dos.component';
 import { ComponentePedirCitaPasoTresComponent } from './componente-paciente/componente-pedir-cita-paciente/componente-pedir-cita-paso-tres/componente-pedir-cita-paso-tres.component';
 import { ComponentePedirCitaPasoCuatroComponent } from './componente-paciente/componente-pedir-cita-paciente/componente-pedir-cita-paso-cuatro/componente-pedir-cita-paso-cuatro.component';
-import { ComponentePedirCitaPasoCincoComponent } from './componente-paciente/componente-pedir-cita-paciente/componente-pedir-cita-paso-cinco/componente-pedir-cita-paso-cinco.component';
-import { ComponentePedirCitaPacienteFinalComponent } from './componente-paciente/componente-pedir-cita-paciente/componente-pedir-cita-paciente-final/componente-pedir-cita-paciente-final.component';
 
 // IMPORTACIÓN MÓDULO ELEMENTOS GENERALES:
 import { ModuloElementosGeneralesModule } from '../modulo-elementos-generales/modulo-elementos-generales.module';
 import { ComponenteCancelarCitaPacienteComponent } from './componente-paciente/componente-mis-citas-paciente/componente-cancelar-cita-paciente/componente-cancelar-cita-paciente.component';
 import { ComponenteCancelarCitaPacienteFinalComponent } from './componente-paciente/componente-mis-citas-paciente/componente-cancelar-cita-paciente-final/componente-cancelar-cita-paciente-final.component';
+import { ComponentePedirCitaPacienteConfirmacionComponent } from './componente-paciente/componente-pedir-cita-paciente/componente-pedir-cita-paciente-confirmacion/componente-pedir-cita-paciente-confirmacion.component';
+import { ComponentePedirCitaPacienteErrorComponent } from './componente-paciente/componente-pedir-cita-paciente/componente-pedir-cita-paciente-error/componente-pedir-cita-paciente-error.component';
 
 @NgModule({
   declarations: [
@@ -41,10 +41,10 @@ import { ComponenteCancelarCitaPacienteFinalComponent } from './componente-pacie
     ComponentePedirCitaPasoDosComponent,
     ComponentePedirCitaPasoTresComponent,
     ComponentePedirCitaPasoCuatroComponent,
-    ComponentePedirCitaPasoCincoComponent,
-    ComponentePedirCitaPacienteFinalComponent,
     ComponenteCancelarCitaPacienteComponent,
     ComponenteCancelarCitaPacienteFinalComponent,
+    ComponentePedirCitaPacienteConfirmacionComponent,
+    ComponentePedirCitaPacienteErrorComponent,
   ],
   imports: [
     CommonModule,
@@ -52,7 +52,7 @@ import { ComponenteCancelarCitaPacienteFinalComponent } from './componente-pacie
     RouterModule,
     ModuloElementosGeneralesModule,
     DataTablesModule,
-    FormsModule
+    FormsModule,
   ],
 })
 export class ModuloPacienteModule {}

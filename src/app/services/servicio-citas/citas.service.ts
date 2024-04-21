@@ -12,46 +12,66 @@ export class CitasService {
 
   mostrarCitasDelPaciente(pacienteId: number): Observable<any> {
     return this.http.get(
-      //`http://localhost/ivo_backend/public/api/citas/mostrarCitasDelPaciente/${pacienteId}`
-      `https://ivo-back.online/api/citas/mostrarCitasDelPaciente/${pacienteId}`
+      `http://localhost/ivo_backend/public/api/citas/mostrarCitasDelPaciente/${pacienteId}`
+      // `https://ivo-back.online/api/citas/mostrarCitasDelPaciente/${pacienteId}`
     );
   }
 
   mostrarDiagnosticoDelPaciente(idCita: string): Observable<any> {
     return this.http.get(
-      //`http://localhost/ivo_backend/public/api/diagnosticos/mostrarDiagnosticoDelPaciente/${idCita}`
-      `https://ivo-back.online/api/diagnosticos/mostrarDiagnosticoDelPaciente/${idCita}`
+      `http://localhost/ivo_backend/public/api/diagnosticos/mostrarDiagnosticoDelPaciente/${idCita}`
+      //  `https://ivo-back.online/api/diagnosticos/mostrarDiagnosticoDelPaciente/${idCita}`
     );
   }
 
   mostrarInformeDelPaciente(idCita: string): Observable<any> {
     return this.http.get(
-      //`http://localhost/ivo_backend/public/api/informes/mostrarInformeDelPaciente/${idCita}`
-      `https://ivo-back.online/api/informes/mostrarInformeDelPaciente/${idCita}`
+      `http://localhost/ivo_backend/public/api/informes/mostrarInformeDelPaciente/${idCita}`
+      // `https://ivo-back.online/api/informes/mostrarInformeDelPaciente/${idCita}`
     );
   }
 
   cancelarCita(numCita: string): Observable<any> {
-    //    let url = `http://localhost/ivo_backend/public/api/citas/cancelarCita/${numCita}`;
-    let url = `https://ivo-back.online/api/citas/cancelarCita/${numCita}`;
-
-    return this.http.post(url, null); // Proporciona null como el cuerpo
+    return this.http.get(
+      //`http://localhost:443/ivo_backend/public/api/citas/cancelarCita/${numCita}`
+      `http://localhost/ivo_backend/public/api/citas/cancelarCita/${numCita}`
+    );
   }
 
+  comprobarCitaActiva(idPaciente: number): Observable<any> {
+    return this.http.get(
+      //`http://localhost:443/ivo_backend/public/api/citas/cancelarCita/${numCita}`
+      `http://localhost/ivo_backend/public/api/citas/comprobarCitaActiva/${idPaciente}`
+    );
+  }
+
+  comprobarCitasDisponibles(idMedico: string): Observable<any> { // Endpoint para generar citas/eventos de las citas disponibles.
+    return this.http.get(
+      `http://localhost/ivo_backend/public/api/citas/comprobarCitasDisponibles/${idMedico}`
+    );
+  }
+
+  pedirCita(datosInsertados: any): Observable<any> {
+    const url = `http://localhost/ivo_backend/public/api/citas/guardar`;
+    // const url = `https://ivo-back.online/api/citas/guardar`;
+    return this.http.post(url, datosInsertados);
+  }
   // ENDPOINTS DEL RADIÓLOGO:
 
   comprobarNumeroDeCita(): Observable<any> {
     return this.http.get(
-      //`http://localhost/ivo_backend/public/api/citas/comprobarNumCita`
+      // `http://localhost/ivo_backend/public/api/citas/comprobarNumCita`
       `https://ivo-back.online/api/citas/comprobarNumCita`
     );
   }
 
   cumplirCita(numCita: number): Observable<any> {
     let url = `https://ivo-back.online/api/citas/cumplirCita/${numCita}`;
-    return this.http.post(url,null);
+    // let url = `http://localhost/ivo_backend/public/api/citas/cumplirCita/${numCita}`;
+
+    return this.http.post(url, null);
   }
-  
+
   // ENDPOINTS DEL ADMINISTRATIVO:
 
   mostrarCitasDelDia(): Observable<any> {
@@ -80,9 +100,8 @@ export class CitasService {
   }
 
   updateCita(idCita: string, datosActualizados: any): Observable<any> {
-    // Cambia la URL según tu estructura de rutas
-   // const url = `http://localhost/ivo_backend/public/api/citas/actualizar/${idCita}`;
-   const url = `https://ivo-back.online/api/citas/actualizar/${idCita}`;
+    // const url = `http://localhost/ivo_backend/public/api/citas/actualizar/${idCita}`;
+    const url = `https://ivo-back.online/api/citas/actualizar/${idCita}`;
 
     return this.http.put(url, datosActualizados);
   }
@@ -90,12 +109,13 @@ export class CitasService {
   // ENDPOINTS DEL MEDICO:
   mostrarCitasMedico(id_medico: number): Observable<any> {
     return this.http.get(
-      `https://ivo-back.online/api/citas/mostrarCitasMedico/${id_medico}`
+      //  `https://ivo-back.online/api/citas/mostrarCitasMedico/${id_medico}`
+      `http://localhost/ivo_backend/public/api/citas/mostrarCitasMedico/${id_medico}`
     );
   }
 
-  crearCitaRadiologica(datosInsertados:any): Observable<any> {
-   //  const url = `http://localhost/ivo_backend/public/api/citas/guardar`;
+  crearCitaRadiologica(datosInsertados: any): Observable<any> {
+    //  const url = `http://localhost/ivo_backend/public/api/citas/guardar`;
     const url = `https://ivo-back.online/api/citas/guardar`;
     return this.http.post(url, datosInsertados);
   }

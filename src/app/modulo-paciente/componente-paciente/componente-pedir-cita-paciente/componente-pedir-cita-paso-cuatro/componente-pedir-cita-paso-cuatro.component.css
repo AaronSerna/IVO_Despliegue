@@ -1,0 +1,48 @@
+label {
+  font-size: 1.1rem;
+  color: #838383;
+}
+
+/*BOTON RETROCESO */
+.botonRetroceso {
+  background-color: #414141;
+  height: 50px;
+  width: 200px;
+  font-size: 20px;
+  color: white;
+
+  border: 6px;
+}
+.botonRetroceso p {
+  line-height: 25px;
+  color: white;
+  margin-top: 5px;
+}
+
+.botonContinuar {
+  background-color: #3b82f6;
+  height: 50px;
+  width: 160px;
+  font-size: 20px;
+  color: white;
+}
+
+.botonContinuar p {
+  line-height: 35px;
+}
+
+.botonContinuar:active {
+  background-color: #3b82f6;
+  color: white;
+  opacity: 0.9;
+}
+
+/* Resolución móviles  */
+@media (max-width: 600px) {
+  .botonRetroceso {
+  }
+
+  .botonContinuar {
+    margin-top: 20px;
+  }
+}

@@ -1,40 +1,48 @@
 <div class="row mx-3 mt-2">
-  <app-componente-botones-cabecera
-    [tituloCabecera]="'Pedir cita'"
-    [botonRetroceder]="true"
-    [botonCrearCita]="false"
-    [botonCancelar]="true"
-    [botonSalirPaciente]="false"
-    [rutaRetroceder]="'paciente'"
-    [rutaCancelar]="'paciente'"
-  ></app-componente-botones-cabecera>
+  <app-componente-botones-cabecera [tituloCabecera]="'Pedir cita'" [botonRetroceder]="true" [botonCrearCita]="false"
+    [botonCancelar]="true" [botonSalirPaciente]="false" [rutaRetroceder]="'paciente'"
+    [rutaCancelar]="'paciente'"></app-componente-botones-cabecera>
 </div>
 
-<div class="row mx-4 mt-2">
-  <app-componente-caja-blanca
-    [mostrarUltimaPregunta]="true"
-    [texto1]="'Tipo de cita'"
-    [texto2]="'Selección de médico'"
-    [texto3]="'Selección de hora'"
-    [texto4]="'Citas disponibles'"
-    [texto5]="'Resumen de los datos'"
-    [estilosPaso1]="{ color: '#3b82f6' }"
-    [estilosCuadradoPaso1]="{ 'background-color': '#3b82f6' }"
-    [estilosPaso2]="{ color: '#b7b7b7' }"
-    [estilosPaso3]="{ color: '#b7b7b7' }"
-    [estilosPaso4]="{ color: '#b7b7b7' }"
-    [estilosPaso5]="{ color: '#b7b7b7' }"
-    [tituloSeccionFormulario]="'Seleccionar cita'"
-    [descripcionTituloFormulario]="'Selecciona el tipo de cita'"
-    [mostrarFormularioPrincipal]="true"
-    [rutaProximoPaso]="'pedirCitaPaso2'"
-    [rutaAnteriorPaso]="'pedirCita'"
-    [mostrarCheckboxesPedirCita]="true"
+<div class="row mx-4 mt-2 bg-light">
 
-    [textoLabel1] ="'Presencial - Medicina familiar'"
-    [textoLabel2] ="'Telefónica	 - Medicina familiar'"
-    
-    [valueCheckbox1]="'Presencial - Medicina familiar'"
-    [valueCheckbox2]="'Telefónica	 - Medicina familiar'"
-  ></app-componente-caja-blanca>
+  <div class="row">
+    <app-componente-pasos-formulario [texto1]="'Tipo de cita'" [texto2]="'Selección de médico'"
+      [texto3]="'Citas disponibles'" [texto4]="'Resumen de los datos'" [estilosPaso1]="{ color: '#3b82f6' }"
+      [estilosCuadradoPaso1]="{ 'background-color': '#3b82f6' }" [estilosPaso2]="{ color: '#b7b7b7' }"
+      [estilosPaso3]="{ color: '#b7b7b7' }" [estilosPaso4]="{ color: '#b7b7b7' }"></app-componente-pasos-formulario>
+  </div>
+
+  <div class="mt-5">
+    <div class="row text-center mt-5">
+      <p style="color: #3B82F6; font-size: 22px;">Seleccionar cita</p>
+      <p style="color:#9E9E9E; margin-top: -10px;">Selecciona el tipo de cita</p>
+    </div>
+
+    <div class="row text-center mt-3">
+      <form class="was-validated" #formularioPaso1="ngForm">
+
+        <div>
+          <input type="radio" name="tipoCita" value="Presencial - Medicina General" [(ngModel)]="tipoCitaSeleccionada"
+            (change)="guardarDatosPaso1()" required>
+          <label class="mx-2"> Presencial - Medicina General</label>
+        </div>
+
+        <div>
+          <input type="radio" name="tipoCita" value="Telefonica - Medicina General" [(ngModel)]="tipoCitaSeleccionada"
+            (change)="guardarDatosPaso1()" required>
+          <label class="mx-2"> Telefónica - Medicina General</label>
+        </div>
+      </form>
+
+    </div>
+
+    <div class="row justify-content-center mt-5">
+      <button class="btn botonContinuar" (click)="continuarAlPaso2()"
+        [style.opacity]="formularioPaso1.valid ? '1' : '0.5'" [disabled]="!formularioPaso1.valid">
+        <p>Continuar</p>
+      </button>
+    </div>
+  </div>
+
 </div>

@@ -18,7 +18,7 @@ export class ComponenteCajaDiagnosticoComponent implements OnInit {
 
   constructor(
     private stylingService: StylingService,
-    private sharedService: SharedService,
+    private sharedService: SharedService
   ) {}
 
   ngOnInit() {
@@ -30,6 +30,14 @@ export class ComponenteCajaDiagnosticoComponent implements OnInit {
       this.isReadonly = status;
     });
   }
+
+  /* ESTE CÓDIGO GENERA LOS PDF PARA EL MÉDICO, ESTÁ COMENTADO PORQUE EN CLOUDFLARE DA ERROR LA IMPORTACIÓN DE 'jspdf'.
+PARA QUE FUNCIONE, HABRÁ QUE INSTALAR NODE MODULES (NPM INSTALL) Y SI NO SE HA INSTALADO CON ÉL 'jspdf',  EJECUTAR EL COMANDO:
+
+npm install jspdf
+
+Y DESCOMENTAR ESTE MÉTODO.
+
 
   /*generarPDF() {
     let pdf = new jsPDF();
@@ -113,7 +121,6 @@ export class ComponenteCajaDiagnosticoComponent implements OnInit {
   }
 */
 
-
   // BOTONES Y TEXT AREA
 
   /**
@@ -122,14 +129,14 @@ export class ComponenteCajaDiagnosticoComponent implements OnInit {
    */
   estilos_textarea_deshabilitado = {
     'border-color': '#E2E7EB',
-    'color': '#B8BEC9',
-    'cursor' : 'auto'
+    color: '#B8BEC9',
+    cursor: 'auto',
   };
 
   estilos_textarea_habilitado = {
     'border-color': 'black',
-    'color': '#515151',
-    'cursor' : 'auto'
+    color: '#515151',
+    cursor: 'auto',
   };
 
   /**

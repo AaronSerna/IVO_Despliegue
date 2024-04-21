@@ -43,17 +43,17 @@ import { TokenInterceptor } from './Interceptor/token.interceptor';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
-    CitasService, 
-    UsuariosService, 
+    CitasService,
+    UsuariosService,
     ImagenesService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
-      multi: true
-    }
+      multi: true,
+    },
   ],
 
   bootstrap: [AppComponent],

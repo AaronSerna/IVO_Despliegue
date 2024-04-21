@@ -12,7 +12,6 @@ export class ComponentePasosFormularioComponent {
   @Input() texto2: string = '';
   @Input() texto3: string = '';
   @Input() texto4: string = '';
-  @Input() texto5: string = '';
 
   @Input() estilosPaso1: any = {};
   @Input() estilosCuadradoPaso1: any = {};
@@ -26,9 +25,7 @@ export class ComponentePasosFormularioComponent {
   @Input() estilosPaso4: any = {};
   @Input() estilosCuadradoPaso4: any = {};
 
-  // Estilos paso nº5 (Remen datos Pedir cita (Paciente))
-  @Input() estilosPaso5: any = {};
-  @Input() estilosCuadradoPaso5: any = {};
+
 
   @Input() mostrarFormularioCrearPaciente: boolean = false;
 

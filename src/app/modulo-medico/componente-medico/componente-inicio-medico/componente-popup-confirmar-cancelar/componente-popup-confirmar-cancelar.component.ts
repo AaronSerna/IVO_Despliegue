@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
-import { CitasService } from 'src/app/services/servicio-citas/citas.service';
+import { CitasService } from '../../../../services/servicio-citas/citas.service';
 
 @Component({
   selector: 'app-componente-popup-confirmar-cancelar',

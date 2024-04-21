@@ -61,7 +61,23 @@ export class ComponenteHistorialPacienteComponent implements OnInit {
       columns: [
         { title: 'Nº de cita', data: 'num_cita' },
         { title: 'Tipo de cita', data: 'tipo_cita' },
-        { title: 'Médico', data: 'nombre_completo_medico' },
+        {
+          title: 'Médico',
+          data: null,
+          render: function (data: any, type: any, full: any) {
+           
+            var tipoCita = full.tipo_cita;
+            var nombreDoctor = '';
+
+            if (tipoCita === 'Medicina General') {
+              nombreDoctor = full.nombre_completo_medico || '';
+            } else if (tipoCita === 'Radiologia') {
+              nombreDoctor = full.nombre_completo_radiologo || '';
+            }
+
+            return nombreDoctor;
+          },
+        },
         { title: 'Fecha', data: 'fecha' },
         { title: 'Hora', data: 'hora' },
         { title: 'Estado', data: 'estado' },
@@ -75,7 +91,14 @@ export class ComponenteHistorialPacienteComponent implements OnInit {
             var numCita = full.num_cita;
             var idCita = full.id;
             var tipoCita = full.tipo_cita;
-            var nombreDoctor = full.nombre_completo_medico;
+            var nombreDoctor = '';
+
+            if (tipoCita === 'Medicina General') {
+              nombreDoctor = full.nombre_completo_medico || '';
+            } else if (tipoCita === 'Radiologia') {
+              nombreDoctor = full.nombre_completo_radiologo || '';
+            }
+
             var fechaCita = full.fecha;
             var horaCita = full.hora;
 

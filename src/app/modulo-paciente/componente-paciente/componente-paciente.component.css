@@ -1,0 +1,73 @@
+.divBotones {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 190px;
+}
+
+.btn {
+  background-color: #3b82f6;
+  height: 50px;
+  width: 160px;
+  font-size: 20px;
+  color: white;
+}
+
+.btn p {
+  line-height: 35px;
+}
+
+.btn:active {
+  background-color: #3b82f6;
+  color: white;
+  opacity: 0.9;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 60vh;
+  width: 50vw;
+  border-radius: 16px;
+}
+
+.cerrar-icon {
+  position: absolute;
+  top: 20%;
+  right: 25%;
+  cursor: pointer;
+}
+
+.botonCerrar {
+  background-color: #ff0000;
+  width: 150px;
+  height: 50px;
+  font-size: 17px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.botonCerrar:active {
+  background-color: #ff0000;
+  color: white;
+  opacity: 0.9;
+}

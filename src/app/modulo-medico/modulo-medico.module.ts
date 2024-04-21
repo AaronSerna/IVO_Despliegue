@@ -5,6 +5,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DataTablesModule } from 'angular-datatables';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 // IMPORTACIONES MÉDICO:
 import { ComponenteMedicoComponent } from './componente-medico/componente-medico.component';
@@ -19,11 +21,14 @@ import { ComponenteHorarioSidebarMedicoComponent } from './componente-medico/com
 import { ComponenteTablaPacientesMedicoComponent } from './componente-medico/componente-inicio-medico/componente-tabla-pacientes-medico/componente-tabla-pacientes-medico.component';
 import { StylingService } from './componente-medico/services/styling.service';
 import { SharedService } from './componente-medico/services/shared.service';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 
 // IMPORTACIÓN MÓDULO ELEMENTOS GENERALES:
-import {ModuloElementosGeneralesModule} from '../modulo-elementos-generales/modulo-elementos-generales.module';
+import { ModuloElementosGeneralesModule } from '../modulo-elementos-generales/modulo-elementos-generales.module';
 import { ComponentePopupConfirmarCancelarComponent } from './componente-medico/componente-inicio-medico/componente-popup-confirmar-cancelar/componente-popup-confirmar-cancelar.component';
+import { ComponenteGestionarAgendaMedicoComponent } from './componente-medico/componente-gestionar-agenda-medico/componente-gestionar-agenda-medico.component';
+import { ComponenteGestionarAgendaPasoDosMedicoComponent } from './componente-medico/componente-gestionar-agenda-paso-dos-medico/componente-gestionar-agenda-paso-dos-medico.component';
+import { ComponenteGestionarAgendaConfirmacionMedicoComponent } from './componente-medico/componente-gestionar-agenda-confirmacion-medico/componente-gestionar-agenda-confirmacion-medico.component';
 
 
 @NgModule({
@@ -38,6 +43,9 @@ import { ComponentePopupConfirmarCancelarComponent } from './componente-medico/c
     ComponenteCabeceraInicioMedicoComponent,
     ComponenteTablaPacientesMedicoComponent,
     ComponentePopupConfirmarCancelarComponent,
+    ComponenteGestionarAgendaMedicoComponent,
+    ComponenteGestionarAgendaPasoDosMedicoComponent,
+    ComponenteGestionarAgendaConfirmacionMedicoComponent,
   ],
   imports: [
     CommonModule,
@@ -47,8 +55,11 @@ import { ComponentePopupConfirmarCancelarComponent } from './componente-medico/c
     MatNativeDateModule,
     ComponenteHorarioSidebarMedicoComponent,
     DataTablesModule,
-    FormsModule
-    ],
-    providers: [StylingService, SharedService]
+    FormsModule,
+    MatFormFieldModule, MatDatepickerModule
+  ],
+  providers: [StylingService, SharedService, { provide: MAT_DATE_LOCALE, useValue: 'es-ES' }]
+// ORIGINAL:  providers: [StylingService, SharedService, { provide: MAT_DATE_LOCALE, useValue: 'es-ES' }, NativeDateAdapter, { provide: MAT_DATE_RANGE_SELECTION_STRATEGY, useClass: MatRangeDateSelectionModel }]
+
 })
 export class ModuloMedicoModule { }

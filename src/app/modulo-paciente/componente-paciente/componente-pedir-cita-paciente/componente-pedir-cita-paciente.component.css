@@ -1,0 +1,22 @@
+label {
+  font-size: 1.1rem;
+  color: #838383;
+}
+
+.botonContinuar {
+  background-color: #3b82f6;
+  height: 50px;
+  width: 160px;
+  font-size: 20px;
+  color: white;
+}
+
+.botonContinuar p {
+  line-height: 35px;
+}
+
+.botonContinuar:active {
+  background-color: #3b82f6;
+  color: white;
+  opacity: 0.9;
+}

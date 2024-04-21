@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class LogoutService {
-  private apiUrl = 'https://ivo-back.online/api';
+  //  private apiUrl = 'https://ivo-back.online/api';
+  private apiUrl = 'http://localhost/ivo_backend/public/api';
 
   constructor(private http: HttpClient) {}
 
