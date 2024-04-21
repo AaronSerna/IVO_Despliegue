@@ -43,12 +43,11 @@ label {
 
 /* Resolución móviles  */
 @media (max-width: 600px) {
- 
+
   .botonContinuar {
     margin-top: 20px;
   }
 }
-
 
 
 /**
@@ -59,7 +58,7 @@ label {
   border-radius: 12px;
   border: 1.5px solid #ccc;
   background: #fff;
-  width: 380px;
+  width: 350px;
 }
 
 :host ::ng-deep .mdc-button__label {
