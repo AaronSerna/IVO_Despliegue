@@ -23,7 +23,7 @@ export class UsuariosService {
   // ENDPOINTS DEL MÉDICO:
 
   mostrarMedicos(): Observable<any> {
-    return this.http.get('https://ivobackend.online/api/usuarios/mostrarRadiologos');
+    return this.http.get('https://ivobackend.online/api/usuarios/mostrarMedicos');
     // return this.http.get('http://localhost/ivo_backend/public/api/usuarios/mostrarMedicos');
   }
 
