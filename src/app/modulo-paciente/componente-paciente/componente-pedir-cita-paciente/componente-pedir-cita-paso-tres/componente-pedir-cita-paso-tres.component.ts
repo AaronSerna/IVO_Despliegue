@@ -28,11 +28,9 @@ export class ComponentePedirCitaPasoTresComponent implements OnInit {
 
   ngOnInit() {
 
-    // document.addEventListener('DOMContentLoaded', () => {
     this.idMedico = this.pedirCitaService.medicoSeleccionado;
     this.comprobarCitasDisponibles(this.idMedico);
     this.cargarCalendarioCitas();
-    // });
   }
 
   cargarCalendarioCitas() {
@@ -48,7 +46,7 @@ export class ComponentePedirCitaPasoTresComponent implements OnInit {
     let eventosDiasFestivos: any = []
 
 
-    // --------- CODIGO PARA SACAR LOS INTERVALOS DE DIAS LIBRES ---------- 
+    // --------- CODIGO PARA SACAR LOS INTERVALOS DE DIAS LIBRES ----------
 
     for (let index = 0; index < diasLibres.length; index++) {
       let split = diasLibres[index].split(' - ');
@@ -128,13 +126,11 @@ export class ComponentePedirCitaPasoTresComponent implements OnInit {
         // CODIGO PARA ALMACENAR LOS DIAS FESTIVOS:
 
         let fechaSoloMesDia = month + '-' + day; // Almacenamos en la variable el mes y dia ('MM-DD') para compararlo con los días festivos.
-        // console.log(fechaSoloMesDia); // Imprimir la fecha con el formato 'mm-dd'
-        // console.log(agenda.diasFestivos); // Imprime el array diasFestivos.
 
         for (let i = 0; i < agenda.diasFestivos.length; i++) {
           eventosDiasFestivos.push(agenda.diasFestivos[i]);
         }
-        /* PODEMOS O BIEN HACER UN FOR PARA ALMACENAR EN EL ARRAY 'eventosDiasFestivos' el valor de los días de la agenda, o bien en el if de 
+        /* PODEMOS O BIEN HACER UN FOR PARA ALMACENAR EN EL ARRAY 'eventosDiasFestivos' el valor de los días de la agenda, o bien en el if de
         abajo usar directamente !agenda.diasFestivos.includes(fechaSoloMesDia). Es lo mismo
         */
 
@@ -160,10 +156,10 @@ export class ComponentePedirCitaPasoTresComponent implements OnInit {
             for (let index = 1; index <= repeticionIntervalos; index++) {
 
               let partes = intervaloHora.split('-'); //(2) ['08:00', '17:00']
-              let horaInicio = parseInt(partes[0], 10); // "8"              
+              let horaInicio = parseInt(partes[0], 10); // "8"
               let horaFin = parseInt(partes[1], 10); // "15"
 
-              for (let i = (horaInicio + 2) * 60; i <= (horaFin + 1.9) * 60; i += agenda?.duracionCita) {  // Ponemos 1.9 en lugar de 1 porque no deberían generarse citas a las 17h, ya que es la hora de fin de jornada del médico. 
+              for (let i = (horaInicio + 2) * 60; i <= (horaFin + 1.9) * 60; i += agenda?.duracionCita) {  // Ponemos 1.9 en lugar de 1 porque no deberían generarse citas a las 17h, ya que es la hora de fin de jornada del médico.
 
                 // Calcular la hora y los minutos para el evento
                 let hora = Math.floor(i / 60);
@@ -261,50 +257,7 @@ export class ComponentePedirCitaPasoTresComponent implements OnInit {
           }
         }
       },
-
-      /* dayCellContent:(arg)=>{
-            Obtener la fecha del día actual en formato 'YYYY-MM-DD'
-           let fechaActual = arg.date.getFullYear() + '-' + (arg.date.getMonth() + 1).toString().padStart(2, '0') + '-' + arg.date.getDate().toString().padStart(2, '0');
-   
-           // Verificar si hay eventos para esta fecha
-           let eventosParaEsteDia = eventos.filter((eventot:any) => {
-             let fechaEvento = eventot.start instanceof Date ? eventot.start : new Date(eventot.start);
-             return fechaEvento.toISOString().slice(0, 10) === fechaActual;
-           });
-   
-           console.log(eventosParaEsteDia);
-           console.log(arg);
-           
-           // Si hay eventos, cambiar el fondo del día a rojo
-           if (eventosParaEsteDia.length > 0) {
-             // Cambiar el estilo del día aquí. 
-             // arg.el se refiere al elemento del día en el DOM.
-             arg['el'].style.backgroundColor = 'red';
-             arg['el'].style.color = 'white'; // Opcional: cambiar el color del texto a blanco para mejorar la legibilidad
-           }
-         }*/
-
     });
-
-
-
-    // ---- INTENTO PARA ACCEDER A LOS DIAS MEDIANTE DOM ----
-    /* // Obtener la fecha de las variables
-    var fechaVariable1 = '2024-03-31';
-    var fechaVariable2 = '2024-04-12'; // Por ejemplo, otra fecha
-
-    // Buscar todos los elementos td con el atributo data-date igual a la fecha de las variables
-    var elementosDia = document.querySelectorAll('td[data-date="2024-04-11"], td[data-date="' + fechaVariable2 + '"]');
-    console.log(elementosDia);
-    var celdasFecha = document.querySelectorAll('.fc-day');
-    console.log(celdasFecha);
-
-    // Iterar sobre los elementos encontrados y agregar la clase 'color-rojo'
-    elementosDia.forEach(function (elemento) {
-      elemento.classList.add('okupado');
-      console.log(elemento);
-    });*/
-
 
 
     this.restringirNavegacionCalendario(calendar); // Renderizamos el calendario solamente 6 meses, de esta forma nos aseguramos que no se pueda pedir cita en meses posteriores a 6 o incluso años.
@@ -319,22 +272,6 @@ export class ComponentePedirCitaPasoTresComponent implements OnInit {
         this.mostrarOcultarButtons('fc-next-button', 'block');
       }, false);
     }
-
-    /* Lógica para que el botón 'mes' de headerToolbar me redirija al mes actual:
-     FUNCIONA PERFECTO, PERO YA ES SEGÚN LA LÓGICA QUE QUERAMOS SEGUIR. SI QUEREMOS QUE ME LLEVE SIEMPRE AL MES ACTUAL O LIMITAR EL MOVIMIENTO CON LAS FLECHAS DE DIRECCIÓN.
-
-     var botonMesActual = document.getElementsByClassName('fc-dayGridMonth-button');    // Obtener el botón "Mes actual"
-
-     for (let x = 0; x < botonMesActual.length; x++) {
-       // Agregar un controlador de eventos para el clic en el botón "Mes actual"
-       botonMesActual[x].addEventListener('click', () => {
-         // Obtener la fecha actual
-         var fechaActual = new Date();
- 
-         // Ir al mes actual en el calendario
-         calendar.gotoDate(fechaActual);
-       });
-     }*/
   }
 
   restringirNavegacionCalendario(calendar: Calendar) {
