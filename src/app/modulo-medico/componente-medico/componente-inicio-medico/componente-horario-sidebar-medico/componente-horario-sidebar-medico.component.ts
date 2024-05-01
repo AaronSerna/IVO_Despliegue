@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 
 /**
  * Para poder tener un buen horario, se hace uso del angular material.
-    En escpecifico, se usa el material (mat-calendar). Este luego se ajusta 
+    En escpecifico, se usa el material (mat-calendar). Este luego se ajusta
     modificando el css para que sea mas parecido a lo que se ha visualizado.
  */
 @Component({
@@ -33,7 +33,7 @@ export class ComponenteHorarioSidebarMedicoComponent {
   /**
     Este método se activará cada vez que cambie la fecha seleccionada.
     Lo que hace es formatear la fecha como se muestra en la base de datos.
-   * 
+   *
    * @param event Elevento del dia seleccionado.
    */
   onDateSelected(event: any) {
@@ -61,7 +61,7 @@ export class ComponenteHorarioSidebarMedicoComponent {
     const storedUserId = localStorage.getItem('id') || '';
     this.http
       .get<any[]>(
-        'https://ivo-back.online/api/citas/mostrarCitasPorFechaMedico/' +
+        'https://ivobackend.online/api/citas/mostrarCitasPorFechaMedico/' +
           fechaSeleccionada +
           '/' +
           parseInt(storedUserId)

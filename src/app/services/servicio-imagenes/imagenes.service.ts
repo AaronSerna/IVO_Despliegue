@@ -10,15 +10,15 @@ export class ImagenesService {
 
   mostrarImagenesDelPaciente(idCita: string): Observable<any> {
     return this.http.get(
-     // `https://ivo-back.online/api/imagenes/mostrarImagenesDelPaciente/${idCita}`
-       `http://localhost/ivo_backend/public/api/imagenes/mostrarImagenesDelPaciente/${idCita}`
+      `https://ivobackend.online/api/imagenes/mostrarImagenesDelPaciente/${idCita}`
+     //  `http://localhost/ivo_backend/public/api/imagenes/mostrarImagenesDelPaciente/${idCita}`
     );
   }
 
   guardar(datos: any): Observable<any> {
     // Guardar imágenes radiológicas
     return this.http.post(
-      'https://ivo-back.online/api/imagenes/guardar',
+      'https://ivobackend.online/api/imagenes/guardar',
       datos
     );
     // return this.http.post(     'http://localhost/ivo_backend/public/api/imagenes/guardar',     datos    );

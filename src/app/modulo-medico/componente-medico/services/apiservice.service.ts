@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
-  apiUrl: string = 'https://ivo-back.online/api/usuarios';
+  apiUrl: string = 'https://ivobackend.online/api/usuarios';
   constructor(private http: HttpClient) {}
 
   obtenerPacientePorId(id: number): Observable<any> {
