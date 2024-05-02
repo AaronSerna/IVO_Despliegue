@@ -40,8 +40,8 @@ export class CitasService {
 
   comprobarCitaActiva(idPaciente: number): Observable<any> {
     return this.http.get(
-      //`https://ivobackend/api/citas/cancelarCita/${numCita}`
-      `http://localhost/ivo_backend/public/api/citas/comprobarCitaActiva/${idPaciente}`
+      `https://ivobackend/api/citas/comprobarCitaActiva/${idPaciente}`
+     // `http://localhost/ivo_backend/public/api/citas/comprobarCitaActiva/${idPaciente}`
     );
   }
 
