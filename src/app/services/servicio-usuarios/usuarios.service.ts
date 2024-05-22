@@ -28,7 +28,7 @@ export class UsuariosService {
   }
 
   mostrarAgendaMedico(idMedico: number): Observable<any> {
-    return this.http.get(`https://ivobackend.online/api/medicos/mostrarAgendaMedico//${idMedico}`);
+    return this.http.get(`https://ivobackend.online/api/medicos/mostrarAgendaMedico/${idMedico}`);
     // return this.http.get(`http://localhost/ivo_backend/public/api/medicos/mostrarAgendaMedico/${idMedico}`);
   }
 
