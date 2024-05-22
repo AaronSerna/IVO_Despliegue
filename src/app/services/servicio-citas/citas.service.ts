@@ -54,8 +54,8 @@ export class CitasService {
   }
 
   pedirCita(datosInsertados: any): Observable<any> {
-    const url = `http://localhost/ivo_backend/public/api/citas/guardar`;
-  //  const url = `https://ivobackend.online/api/citas/guardar`;
+  //  const url = `http://localhost/ivo_backend/public/api/citas/guardar`;
+    const url = `https://ivobackend.online/api/citas/guardar`;
     return this.http.post(url, datosInsertados);
   }
   // ENDPOINTS DEL RADIÓLOGO:
